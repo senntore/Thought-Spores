@@ -1,4 +1,4 @@
-# Thought-Spores
+# Thought Spores
  An interactive exploration of different thought patterns floating in this reality.
  Made in Godot Engine.
 

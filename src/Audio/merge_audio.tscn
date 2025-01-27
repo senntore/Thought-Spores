@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://carvqyvrh8whm"]
+
+[ext_resource type="AudioStream" uid="uid://b54erchwwv42n" path="res://Audio/Merge.wav" id="1_rb2tb"]
+
+[node name="MergeAudio" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_rb2tb")

@@ -1,0 +1,35 @@
+[gd_scene load_steps=11 format=3 uid="uid://bivs1mm5qa8sf"]
+
+[ext_resource type="PackedScene" uid="uid://1fw63yd323cs" path="res://Levels/0.tscn" id="1_jkff8"]
+[ext_resource type="PackedScene" uid="uid://brm7fvm0yk0r3" path="res://Levels/1.tscn" id="2_42pvo"]
+[ext_resource type="PackedScene" uid="uid://jjbtjbbdjx32" path="res://Levels/2.tscn" id="3_3erqy"]
+[ext_resource type="PackedScene" uid="uid://dmln6y1vywv5n" path="res://Levels/3.tscn" id="4_smn6q"]
+[ext_resource type="PackedScene" uid="uid://bhqkxw4sjo54y" path="res://Levels/4.tscn" id="5_rd7vk"]
+[ext_resource type="PackedScene" uid="uid://d2g0obqokdq0v" path="res://Levels/5.tscn" id="6_d2wwc"]
+[ext_resource type="PackedScene" uid="uid://3ybw7guphrwh" path="res://Levels/6.tscn" id="7_33s5o"]
+[ext_resource type="PackedScene" uid="uid://dx0r70ef2v7jh" path="res://Levels/7.tscn" id="8_luxkd"]
+[ext_resource type="PackedScene" uid="uid://cv1cisxxt8h2g" path="res://Levels/8.tscn" id="9_5w3m2"]
+[ext_resource type="PackedScene" uid="uid://bdynou0j7ee8k" path="res://Levels/9.tscn" id="10_tx3xi"]
+
+[node name="Levels" type="Node2D"]
+rotation = 2.0944
+
+[node name="0" parent="." instance=ExtResource("1_jkff8")]
+
+[node name="1" parent="." instance=ExtResource("2_42pvo")]
+
+[node name="2" parent="." instance=ExtResource("3_3erqy")]
+
+[node name="3" parent="." instance=ExtResource("4_smn6q")]
+
+[node name="4" parent="." instance=ExtResource("5_rd7vk")]
+
+[node name="5" parent="." instance=ExtResource("6_d2wwc")]
+
+[node name="6" parent="." instance=ExtResource("7_33s5o")]
+
+[node name="7" parent="." instance=ExtResource("8_luxkd")]
+
+[node name="8" parent="." instance=ExtResource("9_5w3m2")]
+
+[node name="9" parent="." instance=ExtResource("10_tx3xi")]

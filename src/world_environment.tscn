@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmy0vflxeofwu"]
+
+[sub_resource type="Environment" id="Environment_tu5so"]
+background_mode = 3
+glow_enabled = true
+glow_bloom = 0.3
+adjustment_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment"]
+environment = SubResource("Environment_tu5so")

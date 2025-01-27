@@ -1,0 +1,162 @@
+[gd_scene load_steps=15 format=3 uid="uid://dale33s3s8xg6"]
+
+[ext_resource type="Script" path="res://Repulsing Thoughts/repulsing_thoughts.gd" id="1_lgiff"]
+[ext_resource type="Script" path="res://Repulsing Thoughts/repulsing_sprite.gd" id="2_vtp6c"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="3_dghlb"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/compound_state.gd" id="4_trw0c"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/atomic_state.gd" id="5_y8yyh"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/transition.gd" id="6_10nxi"]
+[ext_resource type="PackedScene" uid="uid://btty315yk83ej" path="res://Audio/split_audio.tscn" id="7_w5woy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hwyri"]
+radius = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5h8kt"]
+radius = 59.188
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2bcbj"]
+radius = 254.283
+
+[sub_resource type="Animation" id="Animation_thpev"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RepulsingSprite:outer_radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [20.0]
+}
+
+[sub_resource type="Animation" id="Animation_pknqv"]
+resource_name = "burst"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 2.21914),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.15, 1.15)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(0.574349, 3.4822),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:skew")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.0436332, 0.0453786, 0.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_4vchv"]
+resource_name = "idle"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RepulsingSprite:outer_radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [20.0, 19.4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_17n6p"]
+_data = {
+"RESET": SubResource("Animation_thpev"),
+"burst": SubResource("Animation_pknqv"),
+"idle": SubResource("Animation_4vchv")
+}
+
+[node name="RepulsingThoughts" type="CharacterBody2D"]
+scale = Vector2(1.15, 1.15)
+motion_mode = 1
+script = ExtResource("1_lgiff")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_hwyri")
+
+[node name="RepulsingSprite" type="Sprite2D" parent="."]
+script = ExtResource("2_vtp6c")
+
+[node name="SeparationArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SeparationArea"]
+visible = false
+shape = SubResource("CircleShape2D_5h8kt")
+
+[node name="FollowArea" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FollowArea"]
+shape = SubResource("CircleShape2D_2bcbj")
+debug_color = Color(0.813517, 0.223272, 0.841705, 0.42)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_17n6p")
+}
+
+[node name="StateChart" type="Node" parent="."]
+script = ExtResource("3_dghlb")
+
+[node name="Root" type="Node" parent="StateChart"]
+script = ExtResource("4_trw0c")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateChart/Root"]
+script = ExtResource("5_y8yyh")
+
+[node name="ToFollow" type="Node" parent="StateChart/Root/Idle"]
+script = ExtResource("6_10nxi")
+to = NodePath("../../Following")
+event = &"body_entered"
+delay_in_seconds = "0.0"
+
+[node name="Following" type="Node" parent="StateChart/Root"]
+script = ExtResource("5_y8yyh")
+
+[node name="ToIdle" type="Node" parent="StateChart/Root/Following"]
+script = ExtResource("6_10nxi")
+to = NodePath("../../Idle")
+event = &"body_exited"
+delay_in_seconds = "0.0"
+
+[node name="SplitAudio" parent="." instance=ExtResource("7_w5woy")]
+unique_name_in_owner = true
+
+[connection signal="body_entered" from="SeparationArea" to="." method="_on_separation_area_body_entered"]
+[connection signal="body_entered" from="FollowArea" to="." method="_on_follow_area_body_entered"]
+[connection signal="body_exited" from="FollowArea" to="." method="_on_follow_area_body_exited"]
+[connection signal="state_entered" from="StateChart/Root/Idle" to="." method="_on_idle_state_entered"]
+[connection signal="state_entered" from="StateChart/Root/Following" to="." method="_on_following_state_entered"]
+[connection signal="state_physics_processing" from="StateChart/Root/Following" to="." method="_on_following_state_physics_processing"]

@@ -1,0 +1,2 @@
+Extract the compressed files for platform of your choice & open the executable for desktop platforms and html file for web, to play Thought Spores.
+For playing the web version locally on your browser, in the terminal run `python3 serve.py --root .` in the game directory.

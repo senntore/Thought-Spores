@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://1fw63yd323cs"]
+
+[node name="0" type="Node2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(23.6863, -38.5714)
+scale = Vector2(0.980392, 1.03571)
+color = Color(0.0271652, 0.00125989, 0.0646025, 1)
+polygon = PackedVector2Array(269.6, 662.897, 677.6, 593.379, 1216.16, 1087.72, -24.16, 1087.72)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+color = Color(0.0271652, 0.00125989, 0.0646025, 1)
+polygon = PackedVector2Array(640, 0, 1432, 512, 1752, 1032, 1920, 1088, 1920, 320, 1464, 152, 1304, 0)

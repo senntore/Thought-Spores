@@ -1,0 +1,201 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3n2a2o5w2teo"]
+
+[ext_resource type="PackedScene" uid="uid://c7kquvcy63jd2" path="res://Fellow Thoughts/fellow_thoughts.tscn" id="1_pikrx"]
+[ext_resource type="PackedScene" uid="uid://carvqyvrh8whm" path="res://Audio/merge_audio.tscn" id="2_y5pdv"]
+
+[node name="Fellow" type="Node2D"]
+
+[node name="FellowThoughts" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(-765, -581)
+
+[node name="FellowThoughts2" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(-647, -537)
+
+[node name="FellowThoughts3" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(-705, -385)
+
+[node name="FellowThoughts4" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(1168, -1091)
+
+[node name="FellowThoughts5" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(616, -1363)
+
+[node name="FellowThoughts6" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(760, -2084)
+
+[node name="FellowThoughts7" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(1112, -206)
+
+[node name="FellowThoughts8" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(1165, -361)
+
+[node name="FellowThoughts9" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(1224, -500)
+
+[node name="FellowThoughts10" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(1699, -580)
+
+[node name="FellowThoughts11" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(1678, -489)
+
+[node name="FellowThoughts12" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(1277, -132)
+
+[node name="FellowThoughts13" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(1518, -292)
+
+[node name="FellowThoughts14" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(2485, -1157)
+
+[node name="FellowThoughts15" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(2217, -965)
+
+[node name="FellowThoughts16" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(-515, -41)
+
+[node name="FellowThoughts17" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(398, -92)
+
+[node name="FellowThoughts18" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(2165, -695)
+
+[node name="FellowThoughts19" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(1168, -2904)
+
+[node name="FellowThoughts20" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(1329, -3115)
+
+[node name="FellowThoughts21" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(1509, -2935)
+
+[node name="FellowThoughts22" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(1671, -2926)
+
+[node name="FellowThoughts23" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(1805, -2975)
+
+[node name="FellowThoughts24" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(1918, -3065)
+
+[node name="FellowThoughts25" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(2003, -3159)
+
+[node name="FellowThoughts26" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(1289, -2971)
+
+[node name="FellowThoughts27" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(1361, -3258)
+
+[node name="FellowThoughts28" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(1446, -3371)
+
+[node name="FellowThoughts29" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(1644, -3388)
+
+[node name="FellowThoughts30" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(1783, -3393)
+
+[node name="FellowThoughts31" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(1913, -3393)
+
+[node name="FellowThoughts32" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(1451, -3038)
+
+[node name="FellowThoughts33" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(1496, -3222)
+
+[node name="FellowThoughts34" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(1680, -3276)
+
+[node name="FellowThoughts35" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(1868, -3267)
+
+[node name="FellowThoughts36" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(1585, -3106)
+
+[node name="FellowThoughts37" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(1751, -3106)
+
+[node name="FellowThoughts38" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(1868, -3155)
+
+[node name="FellowThoughts39" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(2111, -3204)
+
+[node name="FellowThoughts40" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(2105, -1864)
+
+[node name="FellowThoughts41" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(2819, -3215)
+
+[node name="FellowThoughts42" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(4279, -2306)
+
+[node name="FellowThoughts43" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(4479, -4852)
+
+[node name="FellowThoughts44" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(4541, -4927)
+
+[node name="FellowThoughts45" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(3451, -4681)
+
+[node name="FellowThoughts46" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(2238, -4866)
+
+[node name="FellowThoughts47" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(2261, -4753)
+
+[node name="FellowThoughts48" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(2357, -4668)
+
+[node name="FellowThoughts49" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(2396, -4555)
+
+[node name="FellowThoughts50" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(2181, -4708)
+
+[node name="FellowThoughts51" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(2232, -4578)
+
+[node name="FellowThoughts52" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(2306, -4459)
+
+[node name="FellowThoughts53" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(2334, -4346)
+
+[node name="FellowThoughts54" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(2232, -4323)
+
+[node name="FellowThoughts55" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(2170, -4437)
+
+[node name="FellowThoughts56" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(2102, -4550)
+
+[node name="FellowThoughts57" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(2153, -4205)
+
+[node name="FellowThoughts58" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(2091, -4289)
+
+[node name="FellowThoughts59" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(2017, -4363)
+
+[node name="FellowThoughts60" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(1921, -4448)
+
+[node name="FellowThoughts61" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(-469, -234)
+
+[node name="FellowThoughts62" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(-122, 185)
+
+[node name="FellowThoughts63" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(183, 156)
+
+[node name="FellowThoughts64" parent="." instance=ExtResource("1_pikrx")]
+position = Vector2(-4, -346)
+
+[node name="MergeAuio" parent="." instance=ExtResource("2_y5pdv")]
+unique_name_in_owner = true

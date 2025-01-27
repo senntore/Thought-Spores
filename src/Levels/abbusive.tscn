@@ -1,0 +1,262 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgtjgbjl0qjv5"]
+
+[ext_resource type="PackedScene" uid="uid://b2fxby2nn2ump" path="res://Attacking Thoughts/attacking_thoughts.tscn" id="1_lsnjr"]
+[ext_resource type="PackedScene" uid="uid://dale33s3s8xg6" path="res://Repulsing Thoughts/repulsing_thoughts.tscn" id="3_aawrx"]
+[ext_resource type="PackedScene" uid="uid://c7kquvcy63jd2" path="res://Fellow Thoughts/fellow_thoughts.tscn" id="4_1h48u"]
+
+[node name="Abbusive" type="Node2D"]
+
+[node name="AttackingThoughts" parent="." instance=ExtResource("1_lsnjr")]
+position = Vector2(2072, -2191)
+
+[node name="AttackingThoughts2" parent="." instance=ExtResource("1_lsnjr")]
+position = Vector2(2580, -2725)
+
+[node name="AttackingThoughts3" parent="." instance=ExtResource("1_lsnjr")]
+position = Vector2(3309, -2318)
+
+[node name="AttackingThoughts4" parent="." instance=ExtResource("1_lsnjr")]
+position = Vector2(4364, -2496)
+
+[node name="AttackingThoughts5" parent="." instance=ExtResource("1_lsnjr")]
+position = Vector2(2059, -3335)
+
+[node name="AttackingThoughts6" parent="." instance=ExtResource("1_lsnjr")]
+position = Vector2(3190, -4272)
+
+[node name="AttackingThoughts7" parent="." instance=ExtResource("1_lsnjr")]
+position = Vector2(1648, -3182)
+
+[node name="AttackingThoughts8" parent="." instance=ExtResource("1_lsnjr")]
+position = Vector2(4331, -3776)
+
+[node name="AttackingThoughts9" parent="." instance=ExtResource("1_lsnjr")]
+position = Vector2(4136, -3433)
+
+[node name="AttackingThoughts10" parent="." instance=ExtResource("1_lsnjr")]
+position = Vector2(4312, -4722)
+
+[node name="AttackingThoughts11" parent="." instance=ExtResource("1_lsnjr")]
+position = Vector2(2792, -3690)
+
+[node name="RepulsingThoughts22" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(1033, -4759)
+
+[node name="FellowThoughts46" parent="." instance=ExtResource("4_1h48u")]
+position = Vector2(1305, -5308)
+
+[node name="AttackingThoughts12" parent="." instance=ExtResource("1_lsnjr")]
+position = Vector2(1440, -5178)
+
+[node name="AttackingThoughts13" parent="." instance=ExtResource("1_lsnjr")]
+position = Vector2(1418, -5036)
+
+[node name="AttackingThoughts14" parent="." instance=ExtResource("1_lsnjr")]
+position = Vector2(1412, -5381)
+
+[node name="FellowThoughts47" parent="." instance=ExtResource("4_1h48u")]
+position = Vector2(1191, -4838)
+
+[node name="AttackingThoughts15" parent="." instance=ExtResource("1_lsnjr")]
+position = Vector2(1893, -4295)
+
+[node name="AttackingThoughts16" parent="." instance=ExtResource("1_lsnjr")]
+position = Vector2(1961, -4182)
+
+[node name="AttackingThoughts17" parent="." instance=ExtResource("1_lsnjr")]
+position = Vector2(1805, -4363)
+
+[node name="RepulsingThoughts23" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(1090, -3723)
+
+[node name="RepulsingThoughts24" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(563, -3993)
+
+[node name="RepulsingThoughts25" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(724, -4028)
+
+[node name="RepulsingThoughts26" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(893, -4041)
+
+[node name="RepulsingThoughts27" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(1077, -4038)
+
+[node name="RepulsingThoughts28" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(1188, -3901)
+
+[node name="RepulsingThoughts29" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(1188, -4012)
+
+[node name="RepulsingThoughts30" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(1131, -3825)
+
+[node name="RepulsingThoughts31" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(1309, -4044)
+
+[node name="RepulsingThoughts32" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(1458, -4123)
+
+[node name="RepulsingThoughts33" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(1652, -4206)
+
+[node name="RepulsingThoughts34" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(1763, -4247)
+
+[node name="AttackingThoughts18" parent="." instance=ExtResource("1_lsnjr")]
+position = Vector2(3661, -4735)
+
+[node name="AttackingThoughts19" parent="." instance=ExtResource("1_lsnjr")]
+position = Vector2(3628, -4580)
+
+[node name="AttackingThoughts20" parent="." instance=ExtResource("1_lsnjr")]
+position = Vector2(3086, -4924)
+
+[node name="AttackingThoughts21" parent="." instance=ExtResource("1_lsnjr")]
+position = Vector2(2888, -5045)
+
+[node name="AttackingThoughts22" parent="." instance=ExtResource("1_lsnjr")]
+position = Vector2(3971, -5415)
+
+[node name="AttackingThoughts23" parent="." instance=ExtResource("1_lsnjr")]
+position = Vector2(4068, -5674)
+
+[node name="AttackingThoughts24" parent="." instance=ExtResource("1_lsnjr")]
+position = Vector2(4098, -5943)
+
+[node name="FellowThoughts48" parent="." instance=ExtResource("4_1h48u")]
+position = Vector2(2740, -5142)
+
+[node name="FellowThoughts49" parent="." instance=ExtResource("4_1h48u")]
+position = Vector2(2836, -4907)
+
+[node name="FellowThoughts50" parent="." instance=ExtResource("4_1h48u")]
+position = Vector2(2998, -5126)
+
+[node name="FellowThoughts51" parent="." instance=ExtResource("4_1h48u")]
+position = Vector2(3001, -4811)
+
+[node name="FellowThoughts52" parent="." instance=ExtResource("4_1h48u")]
+position = Vector2(3175, -5024)
+
+[node name="FellowThoughts53" parent="." instance=ExtResource("4_1h48u")]
+position = Vector2(3232, -4770)
+
+[node name="FellowThoughts54" parent="." instance=ExtResource("4_1h48u")]
+position = Vector2(3356, -4967)
+
+[node name="FellowThoughts55" parent="." instance=ExtResource("4_1h48u")]
+position = Vector2(3356, -5081)
+
+[node name="FellowThoughts56" parent="." instance=ExtResource("4_1h48u")]
+position = Vector2(3505, -5148)
+
+[node name="FellowThoughts57" parent="." instance=ExtResource("4_1h48u")]
+position = Vector2(3613, -5208)
+
+[node name="FellowThoughts58" parent="." instance=ExtResource("4_1h48u")]
+position = Vector2(3537, -4884)
+
+[node name="RepulsingThoughts35" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(3610, -5043)
+
+[node name="RepulsingThoughts36" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(3712, -5151)
+
+[node name="RepulsingThoughts37" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(3740, -5329)
+
+[node name="RepulsingThoughts38" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(3871, -5062)
+
+[node name="RepulsingThoughts39" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(3734, -4907)
+
+[node name="RepulsingThoughts40" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(4033, -5202)
+
+[node name="RepulsingThoughts41" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(4204, -5389)
+
+[node name="RepulsingThoughts42" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(3845, -5551)
+
+[node name="RepulsingThoughts43" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(4277, -5583)
+
+[node name="RepulsingThoughts44" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(3937, -5697)
+
+[node name="RepulsingThoughts45" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(4312, -5735)
+
+[node name="RepulsingThoughts46" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(3982, -5862)
+
+[node name="RepulsingThoughts47" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(4131, -6072)
+
+[node name="FellowThoughts59" parent="." instance=ExtResource("4_1h48u")]
+position = Vector2(3398, -6053)
+
+[node name="FellowThoughts60" parent="." instance=ExtResource("4_1h48u")]
+position = Vector2(3382, -6161)
+
+[node name="FellowThoughts61" parent="." instance=ExtResource("4_1h48u")]
+position = Vector2(3420, -6269)
+
+[node name="FellowThoughts62" parent="." instance=ExtResource("4_1h48u")]
+position = Vector2(3480, -6358)
+
+[node name="FellowThoughts63" parent="." instance=ExtResource("4_1h48u")]
+position = Vector2(3537, -6443)
+
+[node name="FellowThoughts64" parent="." instance=ExtResource("4_1h48u")]
+position = Vector2(3467, -6126)
+
+[node name="FellowThoughts65" parent="." instance=ExtResource("4_1h48u")]
+position = Vector2(3537, -6199)
+
+[node name="FellowThoughts66" parent="." instance=ExtResource("4_1h48u")]
+position = Vector2(3598, -6285)
+
+[node name="FellowThoughts67" parent="." instance=ExtResource("4_1h48u")]
+position = Vector2(3632, -6367)
+
+[node name="FellowThoughts68" parent="." instance=ExtResource("4_1h48u")]
+position = Vector2(3636, -6142)
+
+[node name="FellowThoughts69" parent="." instance=ExtResource("4_1h48u")]
+position = Vector2(3671, -6231)
+
+[node name="FellowThoughts70" parent="." instance=ExtResource("4_1h48u")]
+position = Vector2(3718, -6304)
+
+[node name="FellowThoughts71" parent="." instance=ExtResource("4_1h48u")]
+position = Vector2(3744, -6094)
+
+[node name="FellowThoughts72" parent="." instance=ExtResource("4_1h48u")]
+position = Vector2(3801, -6173)
+
+[node name="FellowThoughts73" parent="." instance=ExtResource("4_1h48u")]
+position = Vector2(3861, -6250)
+
+[node name="FellowThoughts74" parent="." instance=ExtResource("4_1h48u")]
+position = Vector2(3871, -6011)
+
+[node name="FellowThoughts75" parent="." instance=ExtResource("4_1h48u")]
+position = Vector2(3944, -6091)
+
+[node name="FellowThoughts76" parent="." instance=ExtResource("4_1h48u")]
+position = Vector2(4001, -6161)
+
+[node name="FellowThoughts77" parent="." instance=ExtResource("4_1h48u")]
+position = Vector2(3975, -5954)
+
+[node name="FellowThoughts78" parent="." instance=ExtResource("4_1h48u")]
+position = Vector2(4055, -6059)
+
+[node name="AttackingThoughts25" parent="." instance=ExtResource("1_lsnjr")]
+position = Vector2(4168, -5801)
+
+[node name="FellowThoughts79" parent="." instance=ExtResource("4_1h48u")]
+position = Vector2(2428, -3540)

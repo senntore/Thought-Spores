@@ -1,0 +1,227 @@
+[gd_scene load_steps=23 format=3 uid="uid://vhdg6wgr0qcq"]
+
+[ext_resource type="PackedScene" uid="uid://jq8tefaf0cdm" path="res://Player/player.tscn" id="1_2bgbl"]
+[ext_resource type="Script" path="res://game.gd" id="1_bgypv"]
+[ext_resource type="PackedScene" uid="uid://dmy0vflxeofwu" path="res://world_environment.tscn" id="2_rlj75"]
+[ext_resource type="PackedScene" uid="uid://bivs1mm5qa8sf" path="res://Levels/levels.tscn" id="2_sygxv"]
+[ext_resource type="PackedScene" uid="uid://c5awuy2ukkbyd" path="res://Levels/static_body_2d.tscn" id="3_81rem"]
+[ext_resource type="PackedScene" uid="uid://dkebltjh8s7ms" path="res://Levels/repulsive.tscn" id="3_phnst"]
+[ext_resource type="PackedScene" uid="uid://b3n2a2o5w2teo" path="res://Levels/fellow.tscn" id="4_5qfa3"]
+[ext_resource type="PackedScene" uid="uid://cgtjgbjl0qjv5" path="res://Levels/abbusive.tscn" id="5_70dlt"]
+[ext_resource type="AudioStream" uid="uid://byaehqg7uxjh0" path="res://Audio/djlang59_-_Delays_Delays_Delays.mp3" id="7_7ro3y"]
+[ext_resource type="FontFile" uid="uid://c1ltdkwtah0px" path="res://LabybuRegular-R9wYV.ttf" id="9_53jj2"]
+[ext_resource type="PackedScene" uid="uid://ckxx6rdh7ca6h" path="res://Levels/BackgroundParticles.tscn" id="10_11x0r"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="12_mqs14"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/compound_state.gd" id="13_pe2kr"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/atomic_state.gd" id="14_opgdf"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/transition.gd" id="15_3r5ei"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q11bc"]
+bounce = 20.0
+
+[sub_resource type="GDScript" id="GDScript_bth2e"]
+script/source = "extends CanvasLayer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	%PlayButton.grab_focus()
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	#if Input.is_anything_pressed():
+		#visible = false
+		#get_tree().paused = false
+	pass
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oa48t"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_054h5"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ikor"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v6ffp"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jrolu"]
+draw_center = false
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_bgypv")
+
+[node name="Levels" parent="." instance=ExtResource("2_sygxv")]
+position = Vector2(3204, -4465)
+
+[node name="Collisions" parent="." instance=ExtResource("3_81rem")]
+visible = false
+physics_material_override = SubResource("PhysicsMaterial_q11bc")
+
+[node name="Player" parent="." instance=ExtResource("1_2bgbl")]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_horizontal_offset = -1.0
+drag_vertical_offset = -1.0
+
+[node name="Repulsive" parent="." instance=ExtResource("3_phnst")]
+
+[node name="Fellow" parent="." instance=ExtResource("4_5qfa3")]
+
+[node name="Abbusive" parent="." instance=ExtResource("5_70dlt")]
+
+[node name="Background" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+stream = ExtResource("7_7ro3y")
+autoplay = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+script = SubResource("GDScript_bth2e")
+
+[node name="StartPanel" type="Panel" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0.156863)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/StartPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -526.5
+offset_top = -334.5
+offset_right = 526.5
+offset_bottom = 334.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 200
+
+[node name="Title" type="Label" parent="CanvasLayer/StartPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.785035, 0.932183, 1)
+theme_override_fonts/font = ExtResource("9_53jj2")
+theme_override_font_sizes/font_size = 128
+text = "Thought Spores"
+
+[node name="HSplitContainer" type="HSplitContainer" parent="CanvasLayer/StartPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/StartPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="CanvasLayer/StartPanel/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_next = NodePath("../RestartButton")
+focus_previous = NodePath("../QuitButton")
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.939995, 0.918424, 0.933122, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.785766, 0.625375, 0.752878, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxFlat_oa48t")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_054h5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1ikor")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v6ffp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jrolu")
+text = "Explore the Spores"
+
+[node name="RestartButton" type="Button" parent="CanvasLayer/StartPanel/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_next = NodePath("../QuitButton")
+focus_previous = NodePath("../PlayButton")
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.939995, 0.918424, 0.933122, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.785766, 0.625375, 0.752878, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxFlat_oa48t")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_054h5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1ikor")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v6ffp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jrolu")
+text = "Restart"
+
+[node name="QuitButton" type="Button" parent="CanvasLayer/StartPanel/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_next = NodePath("../PlayButton")
+focus_previous = NodePath("../RestartButton")
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.939995, 0.918424, 0.933122, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.785766, 0.625375, 0.752878, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxFlat_oa48t")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_054h5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1ikor")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v6ffp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jrolu")
+text = "Quit"
+
+[node name="CreditsLabel" type="Label" parent="CanvasLayer/StartPanel/VBoxContainer"]
+layout_mode = 2
+text = "Game by @ura for Global Game Jam 2025
+Music - Delays Delays Delays by J.Lang (c) copyright 2023 Licensed under a Creative Commons Attribution Noncommercial  (3.0) license."
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="GPUParticles2D2" parent="CanvasLayer2" instance=ExtResource("10_11x0r")]
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("2_rlj75")]
+
+[node name="StateChart" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("12_mqs14")
+
+[node name="Root" type="Node" parent="StateChart"]
+script = ExtResource("13_pe2kr")
+initial_state = NodePath("Start")
+
+[node name="Start" type="Node" parent="StateChart/Root"]
+script = ExtResource("14_opgdf")
+
+[node name="ToPlay" type="Node" parent="StateChart/Root/Start"]
+script = ExtResource("15_3r5ei")
+to = NodePath("../../Play")
+event = &"play"
+delay_in_seconds = "0.0"
+
+[node name="Play" type="Node" parent="StateChart/Root"]
+script = ExtResource("14_opgdf")
+
+[node name="ToStart" type="Node" parent="StateChart/Root/Play"]
+script = ExtResource("15_3r5ei")
+to = NodePath("../../Start")
+event = &"start"
+delay_in_seconds = "0.0"
+
+[connection signal="pressed" from="CanvasLayer/StartPanel/VBoxContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/StartPanel/VBoxContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/StartPanel/VBoxContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="state_entered" from="StateChart/Root" to="." method="_on_root_state_entered"]
+[connection signal="state_unhandled_input" from="StateChart/Root" to="." method="_on_root_state_unhandled_input"]
+[connection signal="state_entered" from="StateChart/Root/Start" to="." method="_on_start_state_entered"]
+[connection signal="state_exited" from="StateChart/Root/Start" to="." method="_on_start_state_exited"]
+[connection signal="state_entered" from="StateChart/Root/Play" to="." method="_on_play_state_entered"]

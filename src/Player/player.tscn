@@ -1,0 +1,526 @@
+[gd_scene load_steps=28 format=3 uid="uid://jq8tefaf0cdm"]
+
+[ext_resource type="Script" path="res://Player/player.gd" id="1_idjua"]
+[ext_resource type="Script" path="res://Player/player_sprite.gd" id="2_0solj"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="3_3knxm"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/compound_state.gd" id="4_d37fx"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/atomic_state.gd" id="5_6labq"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/transition.gd" id="6_jci78"]
+[ext_resource type="AudioStream" uid="uid://bj8t32rx4xngx" path="res://Audio/powerUp.wav" id="7_ysy2m"]
+[ext_resource type="AudioStream" uid="uid://cikhp05he3nxm" path="res://Audio/PowerUp3.wav" id="9_1oj1h"]
+[ext_resource type="AudioStream" uid="uid://drrjwgg1xgqli" path="res://Audio/jump.wav" id="10_jkefy"]
+[ext_resource type="AudioStream" uid="uid://cygeiqri3fcac" path="res://Audio/jump(2).wav" id="11_tsjqt"]
+[ext_resource type="PackedScene" uid="uid://btty315yk83ej" path="res://Audio/split_audio.tscn" id="12_ncomh"]
+[ext_resource type="AudioStream" uid="uid://bwpsa0c00sdfj" path="res://Audio/jump(1).wav" id="12_u71rw"]
+[ext_resource type="PackedScene" uid="uid://carvqyvrh8whm" path="res://Audio/merge_audio.tscn" id="13_68bv4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3rygw"]
+radius = 22.0101
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y36jr"]
+radius = 84.7611
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s7404"]
+radius = 29.5654
+
+[sub_resource type="Animation" id="Animation_ncb7g"]
+resource_name = "Burst"
+length = 0.8
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 2.21914),
+"update": 0,
+"values": [Vector2(1.5, 1.5), Vector2(1.75, 1.75)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(0.574349, 3.4822),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerSprite:overlay_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.94624, 0.122907, 0.487218, 1), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PlayerSprite:outer_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.987039, 0.311698, 0.558154, 1), Color(0.987287, 0.977829, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:skew")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.5, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.0436332, 0.0453786, 0.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_76fhw"]
+resource_name = "Idle"
+loop_mode = 2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:overlay_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.898879, 0.375222, 0.375828, 1), Color(0.881254, 0.235108, 0.603074, 1), Color(0.658792, 0.388687, 0.85893, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprite:outer_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.898039, 0.376471, 0.376471, 1), Color(0.882353, 0.235294, 0.603922, 1), Color(0.658792, 0.388687, 0.85893, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerSprite:outer_radius")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [30.0, 28.8]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:skew")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.122173]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PlayerSprite2:skew")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.174533]
+}
+
+[sub_resource type="Animation" id="Animation_g2l4t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:overlay_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprite:outer_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerSprite:outer_radius")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [30.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:skew")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PlayerSprite2:skew")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.5, 1.5)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_83401"]
+_data = {
+"Burst": SubResource("Animation_ncb7g"),
+"Idle": SubResource("Animation_76fhw"),
+"RESET": SubResource("Animation_g2l4t")
+}
+
+[sub_resource type="GDScript" id="GDScript_n2ccf"]
+script/source = "@tool
+extends Sprite2D
+
+@export_range(10.0, 120.0, 10.0) var arc_length: float = 60.0 
+@export_range(30.0, 120.0, 10.0) var arc_peak: float =  30.0
+@export var arc_width: float = 2.0
+@export var arc_color: Color = Color.GHOST_WHITE
+@export var spinning:bool = false
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	if Engine.is_editor_hint():
+		return
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	queue_redraw()
+
+
+func _draw() -> void:
+	var start_angle: float = deg_to_rad(arc_peak - arc_length / 2.0)
+	var end_angle: float = deg_to_rad(arc_peak + arc_length / 2.0)
+	if spinning:
+		draw_arc(Vector2.ZERO, 35.0, start_angle, end_angle, 30.0, arc_color, arc_width, true)
+		draw_arc(Vector2.ZERO, 35.0, start_angle + deg_to_rad(120.0), end_angle + deg_to_rad(120.0), 30.0, arc_color, arc_width, true)
+		draw_arc(Vector2.ZERO, 35.0, start_angle + deg_to_rad(240.0), end_angle + deg_to_rad(240.0), 30.0, arc_color, arc_width, true)
+"
+
+[sub_resource type="Animation" id="Animation_glxmq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spinner:arc_width")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Spinner:arc_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.678431, 1, 0.184314, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Spinner:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_a4uak"]
+resource_name = "idle_spin"
+length = 2.0
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spinner:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_xehhk"]
+resource_name = "spin"
+length = 0.4
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spinner:arc_width")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [2.0, 20.0, 2.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Spinner:arc_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.678431, 1, 0.184314, 1), Color(0.193418, 0.327115, 1, 1), Color(0.678431, 1, 0.184314, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Spinner:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_jw8db"]
+resource_name = "spin_dash"
+length = 0.4
+step = 0.02
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spinner:arc_width")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [2.0, 20.0, 20.0, 2.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Spinner:arc_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.02, 0.1, 0.2, 0.28, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.678431, 1, 0.184314, 1), Color(1, 1, 1, 1), Color(0.803922, 0, 0.286275, 1), Color(0.803922, 0, 0.286275, 1), Color(1, 1, 1, 1), Color(0.678431, 1, 0.184314, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Spinner:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.25, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.523599, 6.80678, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hbetm"]
+_data = {
+"RESET": SubResource("Animation_glxmq"),
+"idle_spin": SubResource("Animation_a4uak"),
+"spin": SubResource("Animation_xehhk"),
+"spin_dash": SubResource("Animation_jw8db")
+}
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_q4ye3"]
+playback_mode = 1
+streams_count = 5
+stream_0/stream = ExtResource("7_ysy2m")
+stream_1/stream = ExtResource("9_1oj1h")
+stream_2/stream = ExtResource("10_jkefy")
+stream_3/stream = ExtResource("11_tsjqt")
+stream_4/stream = ExtResource("12_u71rw")
+
+[node name="Player" type="CharacterBody2D"]
+self_modulate = Color(1, 1, 1, 0)
+scale = Vector2(1.5, 1.5)
+motion_mode = 1
+script = ExtResource("1_idjua")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_3rygw")
+
+[node name="PlayerSprite" type="Sprite2D" parent="."]
+script = ExtResource("2_0solj")
+core_color = Color(0.26, 0, 0.0866667, 1)
+
+[node name="PlayerSprite2" type="Sprite2D" parent="."]
+script = ExtResource("2_0solj")
+outer_radius = 28.8
+outer_color = Color(0.658792, 0.388687, 0.85893, 1)
+core_color = Color(0.26, 0, 0.0866667, 1)
+overlay_color = Color(0.658792, 0.388687, 0.85893, 1)
+
+[node name="MergeArea" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MergeArea"]
+shape = SubResource("CircleShape2D_y36jr")
+
+[node name="HitBoxArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxArea"]
+scale = Vector2(1.03749, 1.04899)
+shape = SubResource("CircleShape2D_s7404")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_83401")
+}
+
+[node name="Spinner" type="Sprite2D" parent="."]
+script = SubResource("GDScript_n2ccf")
+arc_color = Color(0.678431, 1, 0.184314, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Spinner"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_hbetm")
+}
+
+[node name="StateChart" type="Node" parent="."]
+script = ExtResource("3_3knxm")
+
+[node name="Root" type="Node" parent="StateChart"]
+script = ExtResource("4_d37fx")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateChart/Root"]
+script = ExtResource("5_6labq")
+
+[node name="ToMerge" type="Node" parent="StateChart/Root/Idle"]
+script = ExtResource("6_jci78")
+to = NodePath("../../Merging")
+event = &"merge"
+delay_in_seconds = "0.6"
+
+[node name="Merging" type="Node" parent="StateChart/Root"]
+script = ExtResource("5_6labq")
+
+[node name="ToIdle" type="Node" parent="StateChart/Root/Merging"]
+script = ExtResource("6_jci78")
+to = NodePath("../../Idle")
+event = &"to_idle"
+delay_in_seconds = "0.0"
+
+[node name="HitAudio" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_q4ye3")
+
+[node name="SplitAudio" parent="." instance=ExtResource("12_ncomh")]
+unique_name_in_owner = true
+
+[node name="MergeAudio" parent="." instance=ExtResource("13_68bv4")]
+unique_name_in_owner = true
+
+[connection signal="body_entered" from="MergeArea" to="." method="_on_merge_area_body_entered"]
+[connection signal="body_entered" from="HitBoxArea" to="." method="_on_hit_box_area_body_entered"]
+[connection signal="state_entered" from="StateChart/Root/Idle" to="." method="_on_idle_state_entered"]
+[connection signal="state_entered" from="StateChart/Root/Merging" to="." method="_on_merging_state_entered"]

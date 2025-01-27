@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://btty315yk83ej"]
+
+[ext_resource type="AudioStream" uid="uid://c5bmvn3vt28ol" path="res://Audio/Split.wav" id="1_10ran"]
+
+[node name="SplitAudio" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_10ran")

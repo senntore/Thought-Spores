@@ -11,9 +11,10 @@ config_version=5
 [application]
 
 config/name="Thought Spores"
+config/tags=PackedStringArray("wild_jam")
 run/main_scene="res://game.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="/home/ura/Projects/Godot/Thought Spores/icon.png"
+config/icon="res://icon.png"
 
 [display]
 

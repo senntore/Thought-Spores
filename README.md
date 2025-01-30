@@ -7,5 +7,4 @@
 Explore and interact with thoughts like bubbles, each with their own unique behaviors when your thought bubble is around them or when they are around you(in huge numbers ><). 
 Just don't let massive, scary thoughts split yours into itty-bitty pieces.
 
-Music - Delays Delays Delays by J.Lang (c) copyright 2023 Licensed under a Creative Commons Attribution Noncommercial  (3.0) license. 
-https://dig.ccmixter.org/files/djlang59/66116 Ft: Snowflake
+Music - Delays Delays Delays by J.Lang (c) copyright 2023 Licensed under a Creative Commons Attribution Noncommercial  (3.0) license.

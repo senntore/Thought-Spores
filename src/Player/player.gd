@@ -81,7 +81,6 @@ func _on_merging_state_entered() -> void:
 
 
 func _on_split_dash_state_entered() -> void:
-	
 	var new_fellow_thoughts := FELLOW_THOUGHTS.instantiate()
 	new_fellow_thoughts.global_scale = self.global_scale - Vector2(0.5, 0.5)
 	new_fellow_thoughts.global_position = self.global_position

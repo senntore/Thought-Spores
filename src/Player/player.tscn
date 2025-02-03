@@ -398,12 +398,9 @@ shape = SubResource("CircleShape2D_3rygw")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 script = ExtResource("2_0solj")
-outer_color = Color(1, 0, 0, 1)
-overlay_color = Color(1, 0, 0, 1)
 
 [node name="PlayerSprite2" type="Sprite2D" parent="."]
 script = ExtResource("2_0solj")
-overlay_color = Color(1, 1, 1, 1)
 
 [node name="MergeArea" type="Area2D" parent="."]
 visible = false
@@ -479,7 +476,8 @@ unique_name_in_owner = true
 [node name="MergeAudio" parent="." instance=ExtResource("13_68bv4")]
 unique_name_in_owner = true
 
-[node name="GPUParticles2D2" parent="." instance=ExtResource("14_dyt41")]
+[node name="GPUParticles2D" parent="." instance=ExtResource("14_dyt41")]
+unique_name_in_owner = true
 
 [connection signal="body_entered" from="MergeArea" to="." method="_on_merge_area_body_entered"]
 [connection signal="body_exited" from="MergeArea" to="." method="_on_merge_area_body_exited"]

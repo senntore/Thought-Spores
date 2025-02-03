@@ -3,9 +3,9 @@ extends Sprite2D
 @export var outer_radius :=  30.0
 @export var core_radius :=  10.0
 @export var width := 0.6
-@export var outer_color := Color.PALE_VIOLET_RED
-@export var core_color := Color.LIGHT_PINK
-@export var overlay_color := Color.PALE_VIOLET_RED
+@export var outer_color := Color.RED
+@export var core_color := Color.LIGHT_CORAL
+@export var overlay_color := Color.RED
 @export var overlay_alpha := 0.3
 @export var core_position: Vector2 = Vector2(-4.0, 4.0)
 @export var shift_core_position: Vector2

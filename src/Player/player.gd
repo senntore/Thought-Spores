@@ -10,7 +10,7 @@ func _ready() -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
-	global_scale = global_scale.clamp(Vector2(0.2, 0.2), Vector2(5, 5))
+	global_scale = global_scale.clamp(Vector2(0.2, 0.2), Vector2(4, 4))
 	
 	direction = Input.get_vector("left", "right", "up", "down").normalized()
 	if direction.length() > 0.0:
@@ -26,7 +26,6 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_released("action") && self.global_scale > Vector2(0.3, 0.3):
 		$StateChart.send_event("to_split_dash")
 	
-
 
 func _on_idle_state_entered() -> void:
 	$AnimationPlayer.play("Idle")
@@ -74,7 +73,7 @@ func _on_merging_state_entered() -> void:
 		if bodies is FellowThoughts:
 			bodies.call_deferred("queue_free")
 			bodies = null
-			self.global_scale += Vector2(0.2, 0.2)
+			self.global_scale += Vector2(0.1, 0.1)
 		%MergeAudio.play()
 	$AnimationPlayer.stop()
 	$StateChart.send_event("to_idle")

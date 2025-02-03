@@ -46,6 +46,8 @@ curve = SubResource("Curve_x3xs3")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_e7pbb"]
 particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 40.0
 direction = Vector3(0, -1, 0)
 spread = 180.0
 initial_velocity_max = 190.0
@@ -61,9 +63,9 @@ hue_variation_curve = SubResource("CurveTexture_p0kvt")
 anim_offset_min = 0.4462
 anim_offset_max = 0.8064
 
-[node name="GPUParticles2D2" type="GPUParticles2D"]
+[node name="GPUParticles2D" type="GPUParticles2D"]
 material = SubResource("CanvasItemMaterial_agmpj")
-amount = 100
+amount = 40
 process_material = SubResource("ParticleProcessMaterial_e7pbb")
 lifetime = 2.0
 preprocess = 60.0

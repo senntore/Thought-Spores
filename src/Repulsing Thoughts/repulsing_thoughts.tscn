@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dale33s3s8xg6"]
+[gd_scene load_steps=16 format=3 uid="uid://dale33s3s8xg6"]
 
 [ext_resource type="Script" path="res://Repulsing Thoughts/repulsing_thoughts.gd" id="1_lgiff"]
 [ext_resource type="Script" path="res://Repulsing Thoughts/repulsing_sprite.gd" id="2_vtp6c"]
@@ -15,7 +15,10 @@ radius = 20.0
 radius = 59.188
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2bcbj"]
-radius = 254.283
+radius = 250.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6d612"]
+radius = 425.0
 
 [sub_resource type="Animation" id="Animation_thpev"]
 length = 0.001
@@ -109,9 +112,9 @@ shape = SubResource("CircleShape2D_hwyri")
 script = ExtResource("2_vtp6c")
 
 [node name="SeparationArea" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SeparationArea"]
-visible = false
 shape = SubResource("CircleShape2D_5h8kt")
 
 [node name="FollowArea" type="Area2D" parent="."]
@@ -120,6 +123,13 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FollowArea"]
 shape = SubResource("CircleShape2D_2bcbj")
 debug_color = Color(0.813517, 0.223272, 0.841705, 0.42)
+
+[node name="FindAttacker" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FindAttacker"]
+shape = SubResource("CircleShape2D_6d612")
+debug_color = Color(0.238711, 0.272837, 1, 0.42)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -153,6 +163,7 @@ delay_in_seconds = "0.0"
 
 [node name="SplitAudio" parent="." instance=ExtResource("7_w5woy")]
 unique_name_in_owner = true
+position = Vector2(0.869565, 0.869565)
 
 [connection signal="body_entered" from="SeparationArea" to="." method="_on_separation_area_body_entered"]
 [connection signal="body_entered" from="FollowArea" to="." method="_on_follow_area_body_entered"]

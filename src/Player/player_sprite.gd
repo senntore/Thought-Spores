@@ -3,9 +3,10 @@ extends Sprite2D
 @export var outer_radius :=  30.0
 @export var core_radius :=  10.0
 @export var width := 0.6
-@export var outer_color := Color.RED
+@export var outer_color := Color.PALE_VIOLET_RED
 @export var core_color := Color.LIGHT_PINK
-@export var overlay_color := Color.RED
+@export var overlay_color := Color.PALE_VIOLET_RED
+@export var overlay_alpha := 0.3
 @export var core_position: Vector2 = Vector2(-4.0, 4.0)
 @export var shift_core_position: Vector2
 
@@ -24,7 +25,7 @@ func _process(_delta: float) -> void:
 
 func _draw() -> void:
 	
-	draw_circle(Vector2.ZERO, outer_radius, Color(overlay_color, 0.3), true, -1, true)
+	draw_circle(Vector2.ZERO, outer_radius, Color(overlay_color, overlay_alpha), true, -1, true)
 	draw_circle(Vector2.ZERO, outer_radius, outer_color, false, width, true)
 	
 	draw_circle(core_position, core_radius, core_color, true, -1, true)

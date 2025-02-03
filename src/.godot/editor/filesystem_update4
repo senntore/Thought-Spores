@@ -1,2 +1,14 @@
 res://default_bus_layout.tres
+res://Player/player.tscn
+res://Player/player.gd
 res://game.tscn
+res://Fellow Thoughts/fellow_thoughts.tscn
+res://Attacking Thoughts/attacking_thoughts.tscn
+res://Repulsing Thoughts/repulsing_thoughts.tscn
+res://Audio/split_audio.tscn
+res://Levels/static_body_2d.tscn
+res://Levels/abbusive.tscn
+res://Player/player_sprite.gd
+res://Levels/BackgroundParticles.tscn
+res://particles.tscn
+res://Player/particles.tscn

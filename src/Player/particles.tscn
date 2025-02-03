@@ -1,0 +1,69 @@
+[gd_scene load_steps=13 format=3 uid="uid://cf0tnapr4ckqb"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_agmpj"]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_6oery"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.486111, 0.89011), 0.312319, 0.312319, 0, 0, Vector2(1, 0.648352), -0.749566, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_1la7c"]
+curve = SubResource("Curve_6oery")
+
+[sub_resource type="Gradient" id="Gradient_ajoe2"]
+offsets = PackedFloat32Array(0, 0.494681, 1)
+colors = PackedColorArray(0.93, 0.1674, 0.37076, 1, 0.954164, 0.772635, 0.888475, 1, 0.32, 0.354, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ncdpl"]
+gradient = SubResource("Gradient_ajoe2")
+
+[sub_resource type="Curve" id="Curve_1hokn"]
+min_value = -1.0
+_data = [Vector2(0, -1), 0.0, 0.0, 0, 0, Vector2(1, 1), 2.8, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_p0kvt"]
+curve = SubResource("Curve_1hokn")
+
+[sub_resource type="Curve" id="Curve_fct5i"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.166667, 0.681319), 0.0494505, 0.0494505, 0, 0, Vector2(0.615741, 0.263736), -1.06404, -1.06404, 0, 0, Vector2(1, 0.032967), -0.388412, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_mh83t"]
+curve = SubResource("Curve_fct5i")
+
+[sub_resource type="Curve" id="Curve_x3xs3"]
+max_value = 3.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_81d40"]
+curve = SubResource("Curve_x3xs3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_e7pbb"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 180.0
+initial_velocity_max = 190.0
+angular_velocity_min = -61.94
+angular_velocity_max = 92.9
+scale_min = 0.0
+scale_max = 10.0
+scale_curve = SubResource("CurveTexture_mh83t")
+scale_over_velocity_curve = SubResource("CurveTexture_81d40")
+color_ramp = SubResource("GradientTexture1D_ncdpl")
+alpha_curve = SubResource("CurveTexture_1la7c")
+hue_variation_curve = SubResource("CurveTexture_p0kvt")
+anim_offset_min = 0.4462
+anim_offset_max = 0.8064
+
+[node name="GPUParticles2D2" type="GPUParticles2D"]
+material = SubResource("CanvasItemMaterial_agmpj")
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_e7pbb")
+lifetime = 2.0
+preprocess = 60.0

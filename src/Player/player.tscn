@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://jq8tefaf0cdm"]
+[gd_scene load_steps=26 format=3 uid="uid://jq8tefaf0cdm"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_idjua"]
 [ext_resource type="Script" path="res://Player/player_sprite.gd" id="2_0solj"]
@@ -13,12 +13,13 @@
 [ext_resource type="PackedScene" uid="uid://btty315yk83ej" path="res://Audio/split_audio.tscn" id="12_ncomh"]
 [ext_resource type="AudioStream" uid="uid://bwpsa0c00sdfj" path="res://Audio/jump(1).wav" id="12_u71rw"]
 [ext_resource type="PackedScene" uid="uid://carvqyvrh8whm" path="res://Audio/merge_audio.tscn" id="13_68bv4"]
+[ext_resource type="PackedScene" uid="uid://cf0tnapr4ckqb" path="res://Player/particles.tscn" id="14_dyt41"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3rygw"]
 radius = 22.0101
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y36jr"]
-radius = 84.7611
+radius = 66.0303
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s7404"]
 radius = 29.5654
@@ -239,191 +240,141 @@ tracks/6/keys = {
 "update": 1,
 "values": [true]
 }
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_83401"]
-_data = {
-"Burst": SubResource("Animation_ncb7g"),
-"Idle": SubResource("Animation_76fhw"),
-"RESET": SubResource("Animation_g2l4t")
-}
-
-[sub_resource type="GDScript" id="GDScript_n2ccf"]
-script/source = "@tool
-extends Sprite2D
-
-@export_range(10.0, 120.0, 10.0) var arc_length: float = 60.0 
-@export_range(30.0, 120.0, 10.0) var arc_peak: float =  30.0
-@export var arc_width: float = 2.0
-@export var arc_color: Color = Color.GHOST_WHITE
-@export var spinning:bool = false
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	if Engine.is_editor_hint():
-		return
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	queue_redraw()
-
-
-func _draw() -> void:
-	var start_angle: float = deg_to_rad(arc_peak - arc_length / 2.0)
-	var end_angle: float = deg_to_rad(arc_peak + arc_length / 2.0)
-	if spinning:
-		draw_arc(Vector2.ZERO, 35.0, start_angle, end_angle, 30.0, arc_color, arc_width, true)
-		draw_arc(Vector2.ZERO, 35.0, start_angle + deg_to_rad(120.0), end_angle + deg_to_rad(120.0), 30.0, arc_color, arc_width, true)
-		draw_arc(Vector2.ZERO, 35.0, start_angle + deg_to_rad(240.0), end_angle + deg_to_rad(240.0), 30.0, arc_color, arc_width, true)
-"
-
-[sub_resource type="Animation" id="Animation_glxmq"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Spinner:arc_width")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("PlayerSprite:width")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [2.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Spinner:arc_color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.678431, 1, 0.184314, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Spinner:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
+"values": [0.6]
 }
 
-[sub_resource type="Animation" id="Animation_a4uak"]
-resource_name = "idle_spin"
-length = 2.0
+[sub_resource type="Animation" id="Animation_bvb3r"]
+resource_name = "blue_jitter_in"
+length = 0.6
 loop_mode = 1
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Spinner:rotation")
+tracks/0/path = NodePath("PlayerSprite:outer_radius")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 6.28319]
+"values": [30.0, 20.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprite:outer_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(2.98411e-06, 0, 0.753843, 1), Color(0, 0, 0.752941, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerSprite:width")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.6, 1.0, 0.6]
 }
 
-[sub_resource type="Animation" id="Animation_xehhk"]
-resource_name = "spin"
+[sub_resource type="Animation" id="Animation_5vtf8"]
+resource_name = "red_jitter_out"
 length = 0.4
 loop_mode = 1
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Spinner:arc_width")
+tracks/0/path = NodePath("PlayerSprite:outer_radius")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [2.0, 20.0, 2.0]
+"values": [28.0, 35.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Spinner:arc_color")
+tracks/1/path = NodePath("PlayerSprite:overlay_color")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0.678431, 1, 0.184314, 1), Color(0.193418, 0.327115, 1, 1), Color(0.678431, 1, 0.184314, 1)]
+"values": [Color(0.898039, 0.376471, 0.376471, 1), Color(0.898039, 0.376471, 0.376471, 1)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Spinner:rotation")
+tracks/2/path = NodePath("PlayerSprite:outer_color")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 6.28319]
+"values": [Color(1, 0, 0, 1), Color(1, 0, 0, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_jw8db"]
-resource_name = "spin_dash"
-length = 0.4
-step = 0.02
+[sub_resource type="Animation" id="Animation_bssqa"]
+resource_name = "white_jitter_out"
+length = 0.5
+loop_mode = 1
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Spinner:arc_width")
+tracks/0/path = NodePath("PlayerSprite:outer_radius")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [2.0, 20.0, 20.0, 2.0]
+"values": [28.0, 34.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Spinner:arc_color")
+tracks/1/path = NodePath("PlayerSprite:outer_color")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.02, 0.1, 0.2, 0.28, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0.678431, 1, 0.184314, 1), Color(1, 1, 1, 1), Color(0.803922, 0, 0.286275, 1), Color(0.803922, 0, 0.286275, 1), Color(1, 1, 1, 1), Color(0.678431, 1, 0.184314, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Spinner:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.25, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [0.0, -0.523599, 6.80678, 6.28319]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_hbetm"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_83401"]
 _data = {
-"RESET": SubResource("Animation_glxmq"),
-"idle_spin": SubResource("Animation_a4uak"),
-"spin": SubResource("Animation_xehhk"),
-"spin_dash": SubResource("Animation_jw8db")
+"Burst": SubResource("Animation_ncb7g"),
+"Idle": SubResource("Animation_76fhw"),
+"RESET": SubResource("Animation_g2l4t"),
+"blue_jitter_in": SubResource("Animation_bvb3r"),
+"red_jitter_out": SubResource("Animation_5vtf8"),
+"white_jitter_out": SubResource("Animation_bssqa")
 }
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_q4ye3"]
@@ -436,7 +387,7 @@ stream_3/stream = ExtResource("11_tsjqt")
 stream_4/stream = ExtResource("12_u71rw")
 
 [node name="Player" type="CharacterBody2D"]
-self_modulate = Color(1, 1, 1, 0)
+rotation = 6.28319
 scale = Vector2(1.5, 1.5)
 motion_mode = 1
 script = ExtResource("1_idjua")
@@ -447,14 +398,12 @@ shape = SubResource("CircleShape2D_3rygw")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 script = ExtResource("2_0solj")
-core_color = Color(0.26, 0, 0.0866667, 1)
+outer_color = Color(1, 0, 0, 1)
+overlay_color = Color(1, 0, 0, 1)
 
 [node name="PlayerSprite2" type="Sprite2D" parent="."]
 script = ExtResource("2_0solj")
-outer_radius = 28.8
-outer_color = Color(0.658792, 0.388687, 0.85893, 1)
-core_color = Color(0.26, 0, 0.0866667, 1)
-overlay_color = Color(0.658792, 0.388687, 0.85893, 1)
+overlay_color = Color(1, 1, 1, 1)
 
 [node name="MergeArea" type="Area2D" parent="."]
 visible = false
@@ -475,16 +424,6 @@ libraries = {
 "": SubResource("AnimationLibrary_83401")
 }
 
-[node name="Spinner" type="Sprite2D" parent="."]
-script = SubResource("GDScript_n2ccf")
-arc_color = Color(0.678431, 1, 0.184314, 1)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Spinner"]
-root_node = NodePath("../..")
-libraries = {
-"": SubResource("AnimationLibrary_hbetm")
-}
-
 [node name="StateChart" type="Node" parent="."]
 script = ExtResource("3_3knxm")
 
@@ -501,6 +440,12 @@ to = NodePath("../../Merging")
 event = &"merge"
 delay_in_seconds = "0.6"
 
+[node name="ToSplitDash" type="Node" parent="StateChart/Root/Idle"]
+script = ExtResource("6_jci78")
+to = NodePath("../../SplitDash")
+event = &"to_split_dash"
+delay_in_seconds = "0.0"
+
 [node name="Merging" type="Node" parent="StateChart/Root"]
 script = ExtResource("5_6labq")
 
@@ -509,6 +454,20 @@ script = ExtResource("6_jci78")
 to = NodePath("../../Idle")
 event = &"to_idle"
 delay_in_seconds = "0.0"
+
+[node name="ToSplitDash" type="Node" parent="StateChart/Root/Merging"]
+script = ExtResource("6_jci78")
+to = NodePath("../../SplitDash")
+event = &"to_split_dash"
+delay_in_seconds = "0.0"
+
+[node name="SplitDash" type="Node" parent="StateChart/Root"]
+script = ExtResource("5_6labq")
+
+[node name="ToIdle" type="Node" parent="StateChart/Root/SplitDash"]
+script = ExtResource("6_jci78")
+to = NodePath("../../Idle")
+delay_in_seconds = "0.4"
 
 [node name="HitAudio" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
@@ -520,7 +479,11 @@ unique_name_in_owner = true
 [node name="MergeAudio" parent="." instance=ExtResource("13_68bv4")]
 unique_name_in_owner = true
 
+[node name="GPUParticles2D2" parent="." instance=ExtResource("14_dyt41")]
+
 [connection signal="body_entered" from="MergeArea" to="." method="_on_merge_area_body_entered"]
+[connection signal="body_exited" from="MergeArea" to="." method="_on_merge_area_body_exited"]
 [connection signal="body_entered" from="HitBoxArea" to="." method="_on_hit_box_area_body_entered"]
 [connection signal="state_entered" from="StateChart/Root/Idle" to="." method="_on_idle_state_entered"]
 [connection signal="state_entered" from="StateChart/Root/Merging" to="." method="_on_merging_state_entered"]
+[connection signal="state_entered" from="StateChart/Root/SplitDash" to="." method="_on_split_dash_state_entered"]

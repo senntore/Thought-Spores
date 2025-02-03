@@ -1,0 +1,150 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2tlaiyrvnjnr"]
+
+[ext_resource type="PackedScene" uid="uid://c7kquvcy63jd2" path="res://Fellow Thoughts/fellow_thoughts.tscn" id="1_dsgwm"]
+[ext_resource type="PackedScene" uid="uid://dale33s3s8xg6" path="res://Repulsing Thoughts/repulsing_thoughts.tscn" id="2_bb60j"]
+
+[node name="ExtraEntities" type="Node2D"]
+
+[node name="FellowThoughts" parent="." instance=ExtResource("1_dsgwm")]
+position = Vector2(1074, -1067)
+
+[node name="FellowThoughts2" parent="." instance=ExtResource("1_dsgwm")]
+position = Vector2(985, -1052)
+
+[node name="FellowThoughts3" parent="." instance=ExtResource("1_dsgwm")]
+position = Vector2(1206, -1187)
+
+[node name="FellowThoughts4" parent="." instance=ExtResource("1_dsgwm")]
+position = Vector2(1257, -1268)
+
+[node name="FellowThoughts5" parent="." instance=ExtResource("1_dsgwm")]
+position = Vector2(694, -1462)
+
+[node name="FellowThoughts6" parent="." instance=ExtResource("1_dsgwm")]
+position = Vector2(802, -1519)
+
+[node name="FellowThoughts7" parent="." instance=ExtResource("1_dsgwm")]
+position = Vector2(727, -1954)
+
+[node name="FellowThoughts8" parent="." instance=ExtResource("1_dsgwm")]
+position = Vector2(895, -2002)
+
+[node name="RepulsingThoughts" parent="." instance=ExtResource("2_bb60j")]
+position = Vector2(469, -816)
+
+[node name="RepulsingThoughts2" parent="." instance=ExtResource("2_bb60j")]
+position = Vector2(304, -905)
+
+[node name="FellowThoughts9" parent="." instance=ExtResource("1_dsgwm")]
+position = Vector2(2196, -840)
+
+[node name="FellowThoughts10" parent="." instance=ExtResource("1_dsgwm")]
+position = Vector2(2234, -1081)
+
+[node name="FellowThoughts11" parent="." instance=ExtResource("1_dsgwm")]
+position = Vector2(2338, -995)
+
+[node name="FellowThoughts12" parent="." instance=ExtResource("1_dsgwm")]
+position = Vector2(2292, -881)
+
+[node name="FellowThoughts13" parent="." instance=ExtResource("1_dsgwm")]
+position = Vector2(2252, -760)
+
+[node name="FellowThoughts14" parent="." instance=ExtResource("1_dsgwm")]
+position = Vector2(2111, -579)
+
+[node name="FellowThoughts15" parent="." instance=ExtResource("1_dsgwm")]
+position = Vector2(2233, -654)
+
+[node name="FellowThoughts16" parent="." instance=ExtResource("1_dsgwm")]
+position = Vector2(2405, -1083)
+
+[node name="RepulsingThoughts3" parent="." instance=ExtResource("2_bb60j")]
+position = Vector2(2876, -1339)
+
+[node name="RepulsingThoughts4" parent="." instance=ExtResource("2_bb60j")]
+position = Vector2(2898, -1516)
+
+[node name="RepulsingThoughts5" parent="." instance=ExtResource("2_bb60j")]
+position = Vector2(3090, -1418)
+
+[node name="RepulsingThoughts6" parent="." instance=ExtResource("2_bb60j")]
+position = Vector2(3165, -1530)
+
+[node name="RepulsingThoughts7" parent="." instance=ExtResource("2_bb60j")]
+position = Vector2(3277, -1683)
+
+[node name="RepulsingThoughts8" parent="." instance=ExtResource("2_bb60j")]
+position = Vector2(2589, -1463)
+
+[node name="FellowThoughts17" parent="." instance=ExtResource("1_dsgwm")]
+position = Vector2(2220, -1514)
+
+[node name="FellowThoughts18" parent="." instance=ExtResource("1_dsgwm")]
+position = Vector2(2013, -1331)
+
+[node name="FellowThoughts19" parent="." instance=ExtResource("1_dsgwm")]
+position = Vector2(1820, -1968)
+
+[node name="FellowThoughts20" parent="." instance=ExtResource("1_dsgwm")]
+position = Vector2(2877, -2307)
+
+[node name="FellowThoughts21" parent="." instance=ExtResource("1_dsgwm")]
+position = Vector2(3593, -2083)
+
+[node name="FellowThoughts22" parent="." instance=ExtResource("1_dsgwm")]
+position = Vector2(3273, -2541)
+
+[node name="FellowThoughts23" parent="." instance=ExtResource("1_dsgwm")]
+position = Vector2(3104, -2897)
+
+[node name="FellowThoughts24" parent="." instance=ExtResource("1_dsgwm")]
+position = Vector2(4016, -2236)
+
+[node name="FellowThoughts25" parent="." instance=ExtResource("1_dsgwm")]
+position = Vector2(4402, -2297)
+
+[node name="FellowThoughts26" parent="." instance=ExtResource("1_dsgwm")]
+position = Vector2(4077, -2443)
+
+[node name="FellowThoughts27" parent="." instance=ExtResource("1_dsgwm")]
+position = Vector2(4442, -2700)
+
+[node name="RepulsingThoughts9" parent="." instance=ExtResource("2_bb60j")]
+position = Vector2(3502, -2369)
+
+[node name="RepulsingThoughts10" parent="." instance=ExtResource("2_bb60j")]
+position = Vector2(3702, -2359)
+
+[node name="RepulsingThoughts11" parent="." instance=ExtResource("2_bb60j")]
+position = Vector2(3886, -2362)
+
+[node name="RepulsingThoughts12" parent="." instance=ExtResource("2_bb60j")]
+position = Vector2(3866, -3253)
+
+[node name="RepulsingThoughts13" parent="." instance=ExtResource("2_bb60j")]
+position = Vector2(3944, -3402)
+
+[node name="RepulsingThoughts14" parent="." instance=ExtResource("2_bb60j")]
+position = Vector2(4047, -3132)
+
+[node name="RepulsingThoughts15" parent="." instance=ExtResource("2_bb60j")]
+position = Vector2(4113, -3306)
+
+[node name="RepulsingThoughts16" parent="." instance=ExtResource("2_bb60j")]
+position = Vector2(4105, -3545)
+
+[node name="RepulsingThoughts17" parent="." instance=ExtResource("2_bb60j")]
+position = Vector2(4216, -3472)
+
+[node name="FellowThoughts28" parent="." instance=ExtResource("1_dsgwm")]
+position = Vector2(3000, -3599)
+
+[node name="FellowThoughts29" parent="." instance=ExtResource("1_dsgwm")]
+position = Vector2(3201, -3947)
+
+[node name="FellowThoughts30" parent="." instance=ExtResource("1_dsgwm")]
+position = Vector2(2913, -3884)
+
+[node name="FellowThoughts31" parent="." instance=ExtResource("1_dsgwm")]
+position = Vector2(2613, -3723)

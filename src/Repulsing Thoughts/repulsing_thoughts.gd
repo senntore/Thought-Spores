@@ -52,11 +52,14 @@ func _on_separation_area_body_entered(body: Node2D) -> void:
 		for seperation in 2:
 			var new_repulsing_thoughts := REPULSING_THOUGHTS.instantiate()
 			new_repulsing_thoughts.global_scale = self.global_scale - Vector2(0.4, 0.4)
-			new_repulsing_thoughts.global_position = self.global_position + Vector2(10, 10) * direction.sign()
+			new_repulsing_thoughts.global_position = self.global_position
 			get_parent().call_deferred("add_child", new_repulsing_thoughts)
 			
+			for bodies in $FindAttacker.get_overlapping_bodies():
+				if bodies is AttackingThoughts:
+					bodies.global_scale -= Vector2(0.1, 0.1)
 		#$AnimationPlayer.play("burst")
 		%SplitAudio.play()
 		self.visible = false
-		await get_tree().create_timer(0.3)
+		await get_tree().create_timer(0.3).timeout
 		self.queue_free()

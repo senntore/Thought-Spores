@@ -49,16 +49,23 @@ func _on_following_state_physics_processing(delta: float) -> void:
 
 func _on_merging_state_entered() -> void:
 	
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(1.4).timeout
+	var BodiesArray: Array = $MergeArea.get_overlapping_bodies()
+	var random_body = BodiesArray.pick_random()
+	var body_freed := 0
+	while random_body is not FellowThoughts:
+		random_body = BodiesArray.pick_random()
 	for bodies in $MergeArea.get_overlapping_bodies():
-		var BodiesArray: Array = $MergeArea.get_overlapping_bodies()
-		if bodies == BodiesArray.pick_random():
-			bodies.scale += Vector2(0.4, 0.4)
+		if bodies == random_body:
+			bodies.global_scale += Vector2(0.4, 0.4)
 			bodies.self_modulate += Color(0.2, 0.2, 0.2)
-			%MergeAuio.play()
-		elif bodies is FellowThoughts:
+		elif bodies is FellowThoughts && body_freed < 1:
 			#$AnimationPlayer.play("burst")
-			bodies.queue_free()
+				%SplitAudio.play()
+				body_freed += 1
+				bodies.queue_free()
+				
+	%MergeAuio.play()
 	$StateChart.send_event("to_idle")
 
 

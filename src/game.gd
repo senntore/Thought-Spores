@@ -61,7 +61,7 @@ func _on_play_state_entered() -> void:
 
 
 func _on_root_state_unhandled_input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("ui_menu") or Input.is_action_just_pressed("ui_select"):
+	if Input.is_action_just_pressed("menu"):
 		if current_state == "start":
 			%StateChart.send_event("play")
 		elif current_state == "play":

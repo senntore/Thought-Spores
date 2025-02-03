@@ -6,9 +6,6 @@
 
 [node name="Abbusive" type="Node2D"]
 
-[node name="AttackingThoughts" parent="." instance=ExtResource("1_lsnjr")]
-position = Vector2(2072, -2191)
-
 [node name="AttackingThoughts2" parent="." instance=ExtResource("1_lsnjr")]
 position = Vector2(2580, -2725)
 
@@ -24,14 +21,8 @@ position = Vector2(2059, -3335)
 [node name="AttackingThoughts6" parent="." instance=ExtResource("1_lsnjr")]
 position = Vector2(3190, -4272)
 
-[node name="AttackingThoughts7" parent="." instance=ExtResource("1_lsnjr")]
-position = Vector2(1648, -3182)
-
 [node name="AttackingThoughts8" parent="." instance=ExtResource("1_lsnjr")]
 position = Vector2(4331, -3776)
-
-[node name="AttackingThoughts9" parent="." instance=ExtResource("1_lsnjr")]
-position = Vector2(4136, -3433)
 
 [node name="AttackingThoughts10" parent="." instance=ExtResource("1_lsnjr")]
 position = Vector2(4312, -4722)
@@ -43,28 +34,22 @@ position = Vector2(2792, -3690)
 position = Vector2(1033, -4759)
 
 [node name="FellowThoughts46" parent="." instance=ExtResource("4_1h48u")]
-position = Vector2(1305, -5308)
+position = Vector2(1320, -5240)
 
 [node name="AttackingThoughts12" parent="." instance=ExtResource("1_lsnjr")]
-position = Vector2(1440, -5178)
+position = Vector2(1534, -5167)
 
 [node name="AttackingThoughts13" parent="." instance=ExtResource("1_lsnjr")]
-position = Vector2(1418, -5036)
-
-[node name="AttackingThoughts14" parent="." instance=ExtResource("1_lsnjr")]
-position = Vector2(1412, -5381)
+position = Vector2(1180, -5104)
 
 [node name="FellowThoughts47" parent="." instance=ExtResource("4_1h48u")]
 position = Vector2(1191, -4838)
 
-[node name="AttackingThoughts15" parent="." instance=ExtResource("1_lsnjr")]
-position = Vector2(1893, -4295)
-
 [node name="AttackingThoughts16" parent="." instance=ExtResource("1_lsnjr")]
-position = Vector2(1961, -4182)
+position = Vector2(1904, -4269)
 
 [node name="AttackingThoughts17" parent="." instance=ExtResource("1_lsnjr")]
-position = Vector2(1805, -4363)
+position = Vector2(1012, -3895)
 
 [node name="RepulsingThoughts23" parent="." instance=ExtResource("3_aawrx")]
 position = Vector2(1090, -3723)
@@ -91,40 +76,31 @@ position = Vector2(1188, -4012)
 position = Vector2(1131, -3825)
 
 [node name="RepulsingThoughts31" parent="." instance=ExtResource("3_aawrx")]
-position = Vector2(1309, -4044)
+position = Vector2(1309, -4029)
 
 [node name="RepulsingThoughts32" parent="." instance=ExtResource("3_aawrx")]
-position = Vector2(1458, -4123)
+position = Vector2(1458, -4100)
 
 [node name="RepulsingThoughts33" parent="." instance=ExtResource("3_aawrx")]
-position = Vector2(1652, -4206)
+position = Vector2(1652, -4149)
 
 [node name="RepulsingThoughts34" parent="." instance=ExtResource("3_aawrx")]
-position = Vector2(1763, -4247)
+position = Vector2(1782, -4213)
 
 [node name="AttackingThoughts18" parent="." instance=ExtResource("1_lsnjr")]
 position = Vector2(3661, -4735)
 
-[node name="AttackingThoughts19" parent="." instance=ExtResource("1_lsnjr")]
-position = Vector2(3628, -4580)
-
 [node name="AttackingThoughts20" parent="." instance=ExtResource("1_lsnjr")]
-position = Vector2(3086, -4924)
-
-[node name="AttackingThoughts21" parent="." instance=ExtResource("1_lsnjr")]
-position = Vector2(2888, -5045)
+position = Vector2(2803, -5185)
 
 [node name="AttackingThoughts22" parent="." instance=ExtResource("1_lsnjr")]
 position = Vector2(3971, -5415)
-
-[node name="AttackingThoughts23" parent="." instance=ExtResource("1_lsnjr")]
-position = Vector2(4068, -5674)
 
 [node name="AttackingThoughts24" parent="." instance=ExtResource("1_lsnjr")]
 position = Vector2(4098, -5943)
 
 [node name="FellowThoughts48" parent="." instance=ExtResource("4_1h48u")]
-position = Vector2(2740, -5142)
+position = Vector2(2975, -4992)
 
 [node name="FellowThoughts49" parent="." instance=ExtResource("4_1h48u")]
 position = Vector2(2836, -4907)
@@ -260,3 +236,45 @@ position = Vector2(4168, -5801)
 
 [node name="FellowThoughts79" parent="." instance=ExtResource("4_1h48u")]
 position = Vector2(2428, -3540)
+
+[node name="RepulsingThoughts2" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(1440, -1789)
+
+[node name="RepulsingThoughts4" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(1305, -1648)
+
+[node name="RepulsingThoughts5" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(1364, -1543)
+
+[node name="RepulsingThoughts6" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(1532, -1598)
+
+[node name="RepulsingThoughts9" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(1685, -1742)
+
+[node name="RepulsingThoughts10" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(1320, -1829)
+
+[node name="RepulsingThoughts11" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(1361, -1727)
+
+[node name="RepulsingThoughts12" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(1405, -1631)
+
+[node name="RepulsingThoughts13" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(1466, -1512)
+
+[node name="RepulsingThoughts14" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(1516, -1850)
+
+[node name="RepulsingThoughts15" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(1556, -1751)
+
+[node name="RepulsingThoughts16" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(1610, -1668)
+
+[node name="RepulsingThoughts17" parent="." instance=ExtResource("3_aawrx")]
+position = Vector2(1653, -1566)
+
+[node name="AttackingThoughts" parent="." instance=ExtResource("1_lsnjr")]
+position = Vector2(4079, -5629)

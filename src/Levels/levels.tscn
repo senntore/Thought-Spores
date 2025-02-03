@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bhqkxw4sjo54y" path="res://Levels/4.tscn" id="5_rd7vk"]
 [ext_resource type="PackedScene" uid="uid://d2g0obqokdq0v" path="res://Levels/5.tscn" id="6_d2wwc"]
 [ext_resource type="PackedScene" uid="uid://3ybw7guphrwh" path="res://Levels/6.tscn" id="7_33s5o"]
-[ext_resource type="PackedScene" uid="uid://dx0r70ef2v7jh" path="res://Levels/7.tscn" id="8_luxkd"]
+[ext_resource type="PackedScene" uid="uid://cccivhk0rqkcy" path="res://Levels/7.tscn" id="8_luxkd"]
 [ext_resource type="PackedScene" uid="uid://cv1cisxxt8h2g" path="res://Levels/8.tscn" id="9_5w3m2"]
 [ext_resource type="PackedScene" uid="uid://bdynou0j7ee8k" path="res://Levels/9.tscn" id="10_tx3xi"]
 

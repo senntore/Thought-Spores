@@ -1,6 +1,3 @@
 res://default_bus_layout.tres
-res://game.tscn
 res://Player/player.tscn
-res://Player/particles.tscn
-res://Light/light.tscn
-res://Player/player_sprite.gd
+res://game.tscn

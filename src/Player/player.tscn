@@ -401,6 +401,9 @@ script = ExtResource("2_0solj")
 
 [node name="PlayerSprite2" type="Sprite2D" parent="."]
 script = ExtResource("2_0solj")
+outer_color = Color(0.658824, 0.388235, 0.858824, 1)
+core_color = Color(0.258824, 0, 0.0862745, 1)
+overlay_color = Color(0.658824, 0.388235, 0.858824, 1)
 
 [node name="MergeArea" type="Area2D" parent="."]
 visible = false

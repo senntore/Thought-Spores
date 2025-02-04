@@ -1,26 +1,7 @@
-[gd_scene load_steps=31 format=4 uid="uid://vhdg6wgr0qcq"]
+[gd_scene load_steps=15 format=4 uid="uid://2hekhvdjoks"]
 
-[ext_resource type="PackedScene" uid="uid://jq8tefaf0cdm" path="res://Player/player.tscn" id="1_2bgbl"]
-[ext_resource type="Script" path="res://game.gd" id="1_bgypv"]
-[ext_resource type="PackedScene" uid="uid://dmy0vflxeofwu" path="res://world_environment.tscn" id="2_rlj75"]
-[ext_resource type="PackedScene" uid="uid://bivs1mm5qa8sf" path="res://Levels/levels.tscn" id="2_sygxv"]
-[ext_resource type="PackedScene" uid="uid://c5awuy2ukkbyd" path="res://Levels/static_body_2d.tscn" id="3_81rem"]
-[ext_resource type="PackedScene" uid="uid://dkebltjh8s7ms" path="res://Levels/repulsive.tscn" id="3_phnst"]
-[ext_resource type="PackedScene" uid="uid://b3n2a2o5w2teo" path="res://Levels/fellow.tscn" id="4_5qfa3"]
-[ext_resource type="PackedScene" uid="uid://cgtjgbjl0qjv5" path="res://Levels/abbusive.tscn" id="5_70dlt"]
-[ext_resource type="AudioStream" uid="uid://byaehqg7uxjh0" path="res://Audio/djlang59_-_Delays_Delays_Delays.mp3" id="7_7ro3y"]
-[ext_resource type="PackedScene" uid="uid://b2tlaiyrvnjnr" path="res://Levels/extra_entities.tscn" id="7_lwxq6"]
-[ext_resource type="FontFile" uid="uid://c1ltdkwtah0px" path="res://LabybuRegular-R9wYV.ttf" id="9_53jj2"]
-[ext_resource type="PackedScene" uid="uid://ckxx6rdh7ca6h" path="res://Levels/BackgroundParticles.tscn" id="10_11x0r"]
-[ext_resource type="Script" path="res://UI/start_screen.gd" id="10_e2g1l"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="12_mqs14"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/compound_state.gd" id="13_pe2kr"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/atomic_state.gd" id="14_opgdf"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/transition.gd" id="15_3r5ei"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q11bc"]
-friction = 0.0
-bounce = 1.0
+[ext_resource type="Script" path="res://UI/start_screen.gd" id="1_7dv7f"]
+[ext_resource type="FontFile" uid="uid://c1ltdkwtah0px" path="res://LabybuRegular-R9wYV.ttf" id="2_x3abd"]
 
 [sub_resource type="Image" id="Image_p3jr2"]
 data = {
@@ -153,7 +134,7 @@ cache/0/50/0/glyphs/63/uv_rect = Rect2(89, 1, 33, 39)
 cache/0/50/0/glyphs/63/texture_idx = 0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yl81c"]
-content_margin_top = 15.0
+content_margin_top = 10.0
 draw_center = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oa48t"]
@@ -176,7 +157,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer/VBoxContainer/TitleContainer/Shade:theme_override_colors/font_color")
+tracks/0/path = NodePath("VBoxContainer/TitleContainer/Shade:theme_override_colors/font_color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -192,7 +173,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer/VBoxContainer/TitleContainer/Shade:theme_override_colors/font_color")
+tracks/0/path = NodePath("VBoxContainer/TitleContainer/Shade:theme_override_colors/font_color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -208,65 +189,31 @@ _data = {
 "idle_title": SubResource("Animation_fpw2i")
 }
 
-[node name="Game" type="Node2D"]
-script = ExtResource("1_bgypv")
-
-[node name="Levels" parent="." instance=ExtResource("2_sygxv")]
-position = Vector2(3204, -4465)
-
-[node name="Collisions" parent="." instance=ExtResource("3_81rem")]
-physics_material_override = SubResource("PhysicsMaterial_q11bc")
-
-[node name="Player" parent="." instance=ExtResource("1_2bgbl")]
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-unique_name_in_owner = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_horizontal_offset = -1.0
-drag_vertical_offset = -1.0
-
-[node name="Repulsive" parent="." instance=ExtResource("3_phnst")]
-position = Vector2(-17, -6)
-
-[node name="Fellow" parent="." instance=ExtResource("4_5qfa3")]
-
-[node name="ExtraEntities" parent="." instance=ExtResource("7_lwxq6")]
-
-[node name="Abbusive" parent="." instance=ExtResource("5_70dlt")]
-
-[node name="Background" type="AudioStreamPlayer" parent="."]
-unique_name_in_owner = true
+[node name="StartScreen" type="CanvasLayer"]
 process_mode = 3
-stream = ExtResource("7_7ro3y")
-volume_db = -10.0
-autoplay = true
+script = ExtResource("1_7dv7f")
 
-[node name="StartScreen" type="CanvasLayer" parent="."]
-unique_name_in_owner = true
-process_mode = 3
-script = ExtResource("10_e2g1l")
-
-[node name="MarginContainer" type="MarginContainer" parent="StartScreen"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -904.0
+offset_top = -519.0
+offset_right = 906.0
+offset_bottom = 521.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+size_flags_horizontal = 6
+size_flags_vertical = 6
 
-[node name="VBoxContainer" type="VBoxContainer" parent="StartScreen/MarginContainer"]
-layout_mode = 2
-
-[node name="TitleContainer" type="MarginContainer" parent="StartScreen/MarginContainer/VBoxContainer"]
+[node name="TitleContainer" type="MarginContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(600, 328)
 layout_mode = 2
 size_flags_vertical = 2
 
-[node name="Shade" type="Label" parent="StartScreen/MarginContainer/VBoxContainer/TitleContainer"]
-unique_name_in_owner = true
+[node name="Shade" type="Label" parent="VBoxContainer/TitleContainer"]
 show_behind_parent = true
 clip_contents = true
 custom_minimum_size = Vector2(600, 328)
@@ -277,32 +224,31 @@ theme_override_font_sizes/font_size = 128
 theme_override_styles/normal = SubResource("StyleBoxFlat_yl81c")
 text = "Thought Spores"
 horizontal_alignment = 1
-autowrap_mode = 2
+autowrap_mode = 3
 
-[node name="Title" type="Label" parent="StartScreen/MarginContainer/VBoxContainer/TitleContainer"]
-unique_name_in_owner = true
+[node name="Title" type="Label" parent="VBoxContainer/TitleContainer"]
 clip_contents = true
 custom_minimum_size = Vector2(600, 328)
 layout_mode = 2
 size_flags_vertical = 6
 theme_override_colors/font_color = Color(0.955006, 0.852877, 1, 1)
-theme_override_fonts/font = ExtResource("9_53jj2")
+theme_override_fonts/font = ExtResource("2_x3abd")
 theme_override_font_sizes/font_size = 128
 text = "Thought Spores"
 horizontal_alignment = 1
-autowrap_mode = 2
+autowrap_mode = 3
 
-[node name="HSplitContainer" type="HSplitContainer" parent="StartScreen/MarginContainer/VBoxContainer"]
+[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 10
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="StartScreen/MarginContainer/VBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
 metadata/_edit_use_anchors_ = true
 
-[node name="PlayButton" type="Button" parent="StartScreen/MarginContainer/VBoxContainer/VBoxContainer2"]
+[node name="PlayButton" type="Button" parent="VBoxContainer/VBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
@@ -321,7 +267,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_v6ffp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_jrolu")
 text = "Explore the Spores"
 
-[node name="RestartButton" type="Button" parent="StartScreen/MarginContainer/VBoxContainer/VBoxContainer2"]
+[node name="RestartButton" type="Button" parent="VBoxContainer/VBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
@@ -340,7 +286,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_v6ffp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_jrolu")
 text = "Restart"
 
-[node name="QuitButton" type="Button" parent="StartScreen/MarginContainer/VBoxContainer/VBoxContainer2"]
+[node name="QuitButton" type="Button" parent="VBoxContainer/VBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
@@ -359,60 +305,33 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_v6ffp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_jrolu")
 text = "Quit"
 
-[node name="CreditsLabel" type="Label" parent="StartScreen/MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
+[node name="CreditsLabel" type="Label" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_vertical = 10
-theme_override_font_sizes/font_size = 16
 text = "Game by @ura for Global Game Jam 2025
 Music - Delays Delays Delays by J.Lang (c) copyright 2023 Licensed under a Creative Commons Attribution Noncommercial (3.0)"
 horizontal_alignment = 1
 vertical_alignment = 2
 autowrap_mode = 3
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="StartScreen"]
+[node name="FlowContainer" type="FlowContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="StartPanel" type="Panel" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.156863)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_cdwm1")
 }
-
-[node name="Particles" type="CanvasLayer" parent="."]
-
-[node name="GPUParticles2D2" parent="Particles" instance=ExtResource("10_11x0r")]
-
-[node name="WorldEnvironment" parent="." instance=ExtResource("2_rlj75")]
-
-[node name="StateChart" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("12_mqs14")
-
-[node name="Root" type="Node" parent="StateChart"]
-script = ExtResource("13_pe2kr")
-initial_state = NodePath("Start")
-
-[node name="Start" type="Node" parent="StateChart/Root"]
-script = ExtResource("14_opgdf")
-
-[node name="ToPlay" type="Node" parent="StateChart/Root/Start"]
-script = ExtResource("15_3r5ei")
-to = NodePath("../../Play")
-event = &"play"
-delay_in_seconds = "0.0"
-
-[node name="Play" type="Node" parent="StateChart/Root"]
-script = ExtResource("14_opgdf")
-
-[node name="ToStart" type="Node" parent="StateChart/Root/Play"]
-script = ExtResource("15_3r5ei")
-to = NodePath("../../Start")
-event = &"start"
-delay_in_seconds = "0.0"
-
-[connection signal="pressed" from="StartScreen/MarginContainer/VBoxContainer/VBoxContainer2/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="StartScreen/MarginContainer/VBoxContainer/VBoxContainer2/RestartButton" to="." method="_on_restart_button_pressed"]
-[connection signal="pressed" from="StartScreen/MarginContainer/VBoxContainer/VBoxContainer2/QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="state_entered" from="StateChart/Root" to="." method="_on_root_state_entered"]
-[connection signal="state_unhandled_input" from="StateChart/Root" to="." method="_on_root_state_unhandled_input"]
-[connection signal="state_entered" from="StateChart/Root/Start" to="." method="_on_start_state_entered"]
-[connection signal="state_exited" from="StateChart/Root/Start" to="." method="_on_start_state_exited"]
-[connection signal="state_entered" from="StateChart/Root/Play" to="." method="_on_play_state_entered"]

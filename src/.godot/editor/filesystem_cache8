@@ -1,10 +1,10 @@
-ea4bc82a6ad023ab7ee23ee620429895
-::res://::1738600178
+fc8a56933c4b1c8d796fdb8f7a9f9475
+::res://::1738656458
 Credits.txt::TextFile::-1::1738244700::0::1::::<><>::
-default_bus_layout.tres::AudioBusLayout::4254640289988050389::1738594908::0::1::::<><>::
-export_presets.cfg::TextFile::-1::1738595924::0::1::::<><>::
-game.gd::GDScript::-1::1738590380::0::1::::<>Node2D<>::
-game.tscn::PackedScene::1488610888924710316::1738600164::0::1::::<><>::uid://jq8tefaf0cdm::::res://Player/player.tscn<>res://game.gd<>uid://dmy0vflxeofwu::::res://world_environment.tscn<>uid://bivs1mm5qa8sf::::res://Levels/levels.tscn<>uid://c5awuy2ukkbyd::::res://Levels/static_body_2d.tscn<>uid://dkebltjh8s7ms::::res://Levels/repulsive.tscn<>uid://b3n2a2o5w2teo::::res://Levels/fellow.tscn<>uid://cgtjgbjl0qjv5::::res://Levels/abbusive.tscn<>uid://byaehqg7uxjh0::::res://Audio/djlang59_-_Delays_Delays_Delays.mp3<>uid://b2tlaiyrvnjnr::::res://Levels/extra_entities.tscn<>uid://c1ltdkwtah0px::::res://LabybuRegular-R9wYV.ttf<>uid://ckxx6rdh7ca6h::::res://Levels/BackgroundParticles.tscn<>res://addons/godot_state_charts/state_chart.gd<>res://addons/godot_state_charts/compound_state.gd<>res://addons/godot_state_charts/atomic_state.gd<>res://addons/godot_state_charts/transition.gd
+default_bus_layout.tres::AudioBusLayout::4254640289988050389::1738652123::0::1::::<><>::
+export_presets.cfg::TextFile::-1::1738655359::0::1::::<><>::
+game.gd::GDScript::-1::1738650554::0::1::::<>Node2D<>::
+game.tscn::PackedScene::1488610888924710316::1738652968::0::1::::<><>::uid://jq8tefaf0cdm::::res://Player/player.tscn<>res://game.gd<>uid://dmy0vflxeofwu::::res://world_environment.tscn<>uid://bivs1mm5qa8sf::::res://Levels/levels.tscn<>uid://c5awuy2ukkbyd::::res://Levels/static_body_2d.tscn<>uid://dkebltjh8s7ms::::res://Levels/repulsive.tscn<>uid://b3n2a2o5w2teo::::res://Levels/fellow.tscn<>uid://cgtjgbjl0qjv5::::res://Levels/abbusive.tscn<>uid://byaehqg7uxjh0::::res://Audio/djlang59_-_Delays_Delays_Delays.mp3<>uid://b2tlaiyrvnjnr::::res://Levels/extra_entities.tscn<>uid://c1ltdkwtah0px::::res://LabybuRegular-R9wYV.ttf<>uid://ckxx6rdh7ca6h::::res://Levels/BackgroundParticles.tscn<>res://UI/start_screen.gd<>res://addons/godot_state_charts/state_chart.gd<>res://addons/godot_state_charts/compound_state.gd<>res://addons/godot_state_charts/atomic_state.gd<>res://addons/godot_state_charts/transition.gd
 icon.png::CompressedTexture2D::8919834308530830668::1738244700::1738244820::1::::<><>::
 LabybuRegular-R9wYV.ttf::FontFile::6621618997596755345::1738244700::1738244820::1::::<><>::
 world_environment.tscn::PackedScene::8052628947984807012::1738244700::0::1::::<><>::
@@ -72,17 +72,17 @@ event_refactor.tscn::PackedScene::6269517391210544356::1738244700::0::1::::<><>:
 attacking_thoughts.gd::GDScript::-1::1738244700::0::1::::AttackingThoughts<>CharacterBody2D<>::
 attacking_thoughts.tscn::PackedScene::4293240930197048191::1738578392::0::1::::<><>::res://Attacking Thoughts/attacking_thoughts.gd<>res://Attacking Thoughts/attaking_sprite.gd<>res://addons/godot_state_charts/state_chart.gd<>res://addons/godot_state_charts/compound_state.gd<>res://addons/godot_state_charts/atomic_state.gd<>res://addons/godot_state_charts/transition.gd
 attaking_sprite.gd::GDScript::-1::1738244700::0::1::::<>Sprite2D<>::
-::res://Audio/::1738578556
+::res://Audio/::1738650713
 djlang59_-_Delays_Delays_Delays.mp3::AudioStreamMP3::4071209150658282147::1738244700::1738244820::1::::<><>::
 jump(1).wav::AudioStreamWAV::3962635133253874047::1738244700::1738244820::1::::<><>::
 jump(2).wav::AudioStreamWAV::6470017902582020018::1738244700::1738244820::1::::<><>::
 jump.wav::AudioStreamWAV::8388152880766914590::1738244700::1738244820::1::::<><>::
 Merge.wav::AudioStreamWAV::4552226291059424927::1738244700::1738244820::1::::<><>::
-merge_audio.tscn::PackedScene::4809240712540167850::1738244700::0::1::::<><>::uid://b54erchwwv42n::::res://Audio/Merge.wav
+merge_audio.tscn::PackedScene::4809240712540167850::1738650713::0::1::::<><>::uid://b54erchwwv42n::::res://Audio/Merge.wav
 PowerUp3.wav::AudioStreamWAV::5355449059641393358::1738244700::1738244820::1::::<><>::
 powerUp.wav::AudioStreamWAV::3087449812888081727::1738244700::1738244820::1::::<><>::
 Split.wav::AudioStreamWAV::6881337886905143443::1738244700::1738244820::1::::<><>::
-split_audio.tscn::PackedScene::3760740513254963625::1738578392::0::1::::<><>::uid://c5bmvn3vt28ol::::res://Audio/Split.wav
+split_audio.tscn::PackedScene::3760740513254963625::1738650628::0::1::::<><>::uid://c5bmvn3vt28ol::::res://Audio/Split.wav
 ::res://Fellow Thoughts/::1738590380
 fellow_sprite.gd::GDScript::-1::1738244700::0::1::::<>Sprite2D<>::
 fellow_thoughts.gd::GDScript::-1::1738590380::0::1::::FellowThoughts<>CharacterBody2D<>::
@@ -109,12 +109,15 @@ static_body_2d.tscn::PackedScene::6879879469438723303::1738590380::0::1::::<><>:
 light.gd::GDScript::-1::1738590380::0::1::::<>Area2D<>::
 light.tscn::PackedScene::8355880288210201137::1738590380::0::1::::<><>::res://Light/light.gd<>res://Light/light_sprite.gd
 light_sprite.gd::GDScript::-1::1738590380::0::1::::<>Sprite2D<>::
-::res://Player/::1738599990
+::res://Player/::1738652792
 particles.tscn::PackedScene::5176571891594497801::1738594100::0::1::::<><>::
 player.gd::GDScript::-1::1738592548::0::1::::Player<>CharacterBody2D<>::
-player.tscn::PackedScene::666767445477823570::1738599990::0::1::::<><>::res://Player/player.gd<>res://Player/player_sprite.gd<>res://addons/godot_state_charts/state_chart.gd<>res://addons/godot_state_charts/compound_state.gd<>res://addons/godot_state_charts/atomic_state.gd<>res://addons/godot_state_charts/transition.gd<>uid://bj8t32rx4xngx::::res://Audio/powerUp.wav<>uid://cikhp05he3nxm::::res://Audio/PowerUp3.wav<>uid://drrjwgg1xgqli::::res://Audio/jump.wav<>uid://cygeiqri3fcac::::res://Audio/jump(2).wav<>uid://btty315yk83ej::::res://Audio/split_audio.tscn<>uid://bwpsa0c00sdfj::::res://Audio/jump(1).wav<>uid://carvqyvrh8whm::::res://Audio/merge_audio.tscn<>uid://cf0tnapr4ckqb::::res://Player/particles.tscn
+player.tscn::PackedScene::666767445477823570::1738652792::0::1::::<><>::res://Player/player.gd<>res://Player/player_sprite.gd<>res://addons/godot_state_charts/state_chart.gd<>res://addons/godot_state_charts/compound_state.gd<>res://addons/godot_state_charts/atomic_state.gd<>res://addons/godot_state_charts/transition.gd<>uid://bj8t32rx4xngx::::res://Audio/powerUp.wav<>uid://cikhp05he3nxm::::res://Audio/PowerUp3.wav<>uid://drrjwgg1xgqli::::res://Audio/jump.wav<>uid://cygeiqri3fcac::::res://Audio/jump(2).wav<>uid://btty315yk83ej::::res://Audio/split_audio.tscn<>uid://bwpsa0c00sdfj::::res://Audio/jump(1).wav<>uid://carvqyvrh8whm::::res://Audio/merge_audio.tscn<>uid://cf0tnapr4ckqb::::res://Player/particles.tscn
 player_sprite.gd::GDScript::-1::1738590380::0::1::::<>Sprite2D<>::
 ::res://Repulsing Thoughts/::1738590380
 repulsing_sprite.gd::GDScript::-1::1738244700::0::1::::<>Sprite2D<>::
 repulsing_thoughts.gd::GDScript::-1::1738590380::0::1::::RepulsingThoughts<>CharacterBody2D<>::
 repulsing_thoughts.tscn::PackedScene::7182264576332216943::1738590380::0::1::::<><>::res://Repulsing Thoughts/repulsing_thoughts.gd<>res://Repulsing Thoughts/repulsing_sprite.gd<>res://addons/godot_state_charts/state_chart.gd<>res://addons/godot_state_charts/compound_state.gd<>res://addons/godot_state_charts/atomic_state.gd<>res://addons/godot_state_charts/transition.gd<>uid://btty315yk83ej::::res://Audio/split_audio.tscn
+::res://UI/::1738652366
+start_screen.gd::GDScript::-1::1738652366::0::1::::<>CanvasLayer<>::
+start_screen.tscn::PackedScene::56170898490254326::1738650628::0::1::::<><>::res://UI/start_screen.gd<>uid://c1ltdkwtah0px::::res://LabybuRegular-R9wYV.ttf

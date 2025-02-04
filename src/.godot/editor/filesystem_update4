@@ -1,3 +1,5 @@
 res://default_bus_layout.tres
 res://game.tscn
+res://UI/start_screen.gd
 res://Player/player.tscn
+res://game.gd

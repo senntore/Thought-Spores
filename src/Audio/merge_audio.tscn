@@ -4,3 +4,4 @@
 
 [node name="MergeAudio" type="AudioStreamPlayer2D"]
 stream = ExtResource("1_rb2tb")
+volume_db = -10.0

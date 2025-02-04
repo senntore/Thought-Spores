@@ -472,6 +472,7 @@ delay_in_seconds = "0.4"
 [node name="HitAudio" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_q4ye3")
+volume_db = -10.0
 
 [node name="SplitAudio" parent="." instance=ExtResource("12_ncomh")]
 unique_name_in_owner = true

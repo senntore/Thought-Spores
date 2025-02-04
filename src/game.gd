@@ -9,7 +9,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+		var viewport_size := get_viewport().get_visible_rect().size
+		if viewport_size.y >= viewport_size.x * 1.6:
+			%Camera2D.zoom = Vector2(2, 2)
 	
 
 #func _unhandled_input(event: InputEvent) -> void:
@@ -37,14 +39,14 @@ func _on_quit_button_pressed() -> void:
 func _on_start_state_entered() -> void:
 	
 	current_state = "start"
-	%CanvasLayer.visible = true
+	%StartScreen.visible = true
 	get_tree().paused = true
 	%PlayButton.grab_focus()
 	
-	$CanvasLayer2/GPUParticles2D2.process_mode = Node.PROCESS_MODE_ALWAYS
+	$Particles/GPUParticles2D2.process_mode = Node.PROCESS_MODE_ALWAYS
 	await get_tree().create_timer(0.6).timeout
 	
-	$CanvasLayer2/GPUParticles2D2.process_mode = Node.PROCESS_MODE_INHERIT
+	$Particles/GPUParticles2D2.process_mode = Node.PROCESS_MODE_INHERIT
 	
 	pass # Replace with function body.
 
@@ -54,7 +56,7 @@ func _on_start_state_entered() -> void:
 
 
 func _on_play_state_entered() -> void:
-	%CanvasLayer.visible = false
+	%StartScreen.visible = false
 	get_tree().paused = false
 	current_state = "play"
 	pass

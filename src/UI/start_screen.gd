@@ -15,7 +15,6 @@ func _process(_delta: float) -> void:
 		#get_tree().paused = false
 	viewport_size = get_viewport().get_visible_rect().size
 	ui_text_size = viewport_size.y / 60.0
-	print(viewport_size)	
 	$MarginContainer.size = viewport_size 
 	
 	# Font Size

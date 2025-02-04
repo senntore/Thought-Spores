@@ -12,7 +12,7 @@ func _process(_delta: float) -> void:
 		var viewport_size := get_viewport().get_visible_rect().size
 		if viewport_size.y >= viewport_size.x * 1.6:
 			%Camera2D.zoom = Vector2(2, 2)
-	
+
 
 #func _unhandled_input(event: InputEvent) -> void:
 	#if Input.is_action_just_pressed("ui_menu"):

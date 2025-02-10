@@ -1,4 +1,5 @@
-![thought_splores_cover](https://github.com/user-attachments/assets/0cf3a476-f951-4a24-84f7-d06ccd820dcc)
+![thought_spores_cover](https://github.com/user-attachments/assets/325fa434-0f9e-4030-8fb4-93c59d229ffc)
+
 
 # Thought Spores
  An interactive exploration of peculiar thought patterns floating in this reality.

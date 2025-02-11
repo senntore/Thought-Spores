@@ -9,9 +9,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-		var viewport_size := get_viewport().get_visible_rect().size
-		if viewport_size.y >= viewport_size.x * 1.6:
-			%Camera2D.zoom = Vector2(2, 2)
+	var viewport_size := get_viewport().get_visible_rect().size
+	if viewport_size.y >= viewport_size.x * 1.6:
+		%Camera2D.zoom = Vector2(2, 2)
 
 
 #func _unhandled_input(event: InputEvent) -> void:
@@ -49,8 +49,6 @@ func _on_start_state_entered() -> void:
 	$Particles/GPUParticles2D2.process_mode = Node.PROCESS_MODE_INHERIT
 	
 	pass # Replace with function body.
-
-
 
 
 

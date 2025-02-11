@@ -13,6 +13,9 @@ func _process(_delta: float) -> void:
 	#if Input.is_anything_pressed():
 		#visible = false
 		#get_tree().paused = false
+	viewport_adapt_ui()
+
+func viewport_adapt_ui() -> void:
 	viewport_size = get_viewport().get_visible_rect().size
 	ui_text_size = viewport_size.y / 60.0
 	$MarginContainer.size = viewport_size 

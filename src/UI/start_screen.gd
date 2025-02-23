@@ -6,6 +6,7 @@ var ui_text_size: float
 func _ready() -> void:
 	%PlayButton.grab_focus()
 	$AnimationPlayer.play("idle_title")
+	DisplayServer.window_set_min_size(Vector2(400.0, 700.0), 0)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,7 +20,7 @@ func viewport_adapt_ui() -> void:
 	viewport_size = get_viewport().get_visible_rect().size
 	ui_text_size = viewport_size.y / 60.0
 	$MarginContainer.size = viewport_size 
-	
+
 	# Font Size
 	if viewport_size.y >= viewport_size.x * 1.6:
 		%Shade.add_theme_font_size_override("font_size", ui_text_size * 6)

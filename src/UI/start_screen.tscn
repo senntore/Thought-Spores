@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=4 uid="uid://2hekhvdjoks"]
 
-[ext_resource type="Script" path="res://UI/start_screen.gd" id="1_7dv7f"]
+[ext_resource type="Script" uid="uid://swyoquxhrbff" path="res://UI/start_screen.gd" id="1_7dv7f"]
 [ext_resource type="FontFile" uid="uid://c1ltdkwtah0px" path="res://LabybuRegular-R9wYV.ttf" id="2_x3abd"]
 
 [sub_resource type="Image" id="Image_p3jr2"]
@@ -185,8 +185,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cdwm1"]
 _data = {
-"RESET": SubResource("Animation_e2wpk"),
-"idle_title": SubResource("Animation_fpw2i")
+&"RESET": SubResource("Animation_e2wpk"),
+&"idle_title": SubResource("Animation_fpw2i")
 }
 
 [node name="StartScreen" type="CanvasLayer"]

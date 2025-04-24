@@ -1,3 +1,6 @@
+Button
+OptionButton
+CheckButton
 Node2D
 Node
 Camera2D
@@ -9,6 +12,3 @@ FlowContainer
 PanelContainer
 CenterContainer
 Panel
-CanvasGroup
-Control
-Sprite2D

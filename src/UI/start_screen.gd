@@ -15,6 +15,11 @@ func _process(_delta: float) -> void:
 		#visible = false
 		#get_tree().paused = false
 	viewport_adapt_ui()
+	if DisplayServer.window_get_mode() == 3 or DisplayServer.window_get_mode() == 4:
+		%FullscreenButton.text = "Fullscreen [ON]"
+	else:
+		%FullscreenButton.text = "Fullscreen [OFF]"
+
 
 func viewport_adapt_ui() -> void:
 	viewport_size = get_viewport().get_visible_rect().size
@@ -32,7 +37,7 @@ func viewport_adapt_ui() -> void:
 	%PlayButton.add_theme_font_size_override("font_size", ui_text_size * 2)
 	%RestartButton.add_theme_font_size_override("font_size", ui_text_size * 2)
 	%QuitButton.add_theme_font_size_override("font_size", ui_text_size * 2)
-	
+	%FullscreenButton.add_theme_font_size_override("font_size", ui_text_size * 2)
 	%CreditsLabel.add_theme_font_size_override("font_size", ui_text_size)
 	
 	# Custom Minimum Size

@@ -1,7 +1,7 @@
-[gd_scene load_steps=31 format=4 uid="uid://vhdg6wgr0qcq"]
+[gd_scene load_steps=36 format=4 uid="uid://vhdg6wgr0qcq"]
 
 [ext_resource type="PackedScene" uid="uid://jq8tefaf0cdm" path="res://Player/player.tscn" id="1_2bgbl"]
-[ext_resource type="Script" path="res://game.gd" id="1_bgypv"]
+[ext_resource type="Script" uid="uid://btlqyw8jhw4k2" path="res://game.gd" id="1_bgypv"]
 [ext_resource type="PackedScene" uid="uid://dmy0vflxeofwu" path="res://world_environment.tscn" id="2_rlj75"]
 [ext_resource type="PackedScene" uid="uid://bivs1mm5qa8sf" path="res://Levels/levels.tscn" id="2_sygxv"]
 [ext_resource type="PackedScene" uid="uid://c5awuy2ukkbyd" path="res://Levels/static_body_2d.tscn" id="3_81rem"]
@@ -12,11 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://b2tlaiyrvnjnr" path="res://Levels/extra_entities.tscn" id="7_lwxq6"]
 [ext_resource type="FontFile" uid="uid://c1ltdkwtah0px" path="res://LabybuRegular-R9wYV.ttf" id="9_53jj2"]
 [ext_resource type="PackedScene" uid="uid://ckxx6rdh7ca6h" path="res://Levels/BackgroundParticles.tscn" id="10_11x0r"]
-[ext_resource type="Script" path="res://UI/start_screen.gd" id="10_e2g1l"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="12_mqs14"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/compound_state.gd" id="13_pe2kr"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/atomic_state.gd" id="14_opgdf"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/transition.gd" id="15_3r5ei"]
+[ext_resource type="Script" uid="uid://swyoquxhrbff" path="res://UI/start_screen.gd" id="10_e2g1l"]
+[ext_resource type="Script" uid="uid://jhmvtmlhd2kg" path="res://addons/godot_state_charts/state_chart.gd" id="12_mqs14"]
+[ext_resource type="Script" uid="uid://cbvyi42e2khfa" path="res://addons/godot_state_charts/compound_state.gd" id="13_pe2kr"]
+[ext_resource type="Script" uid="uid://gvfv86cu4euo" path="res://addons/godot_state_charts/atomic_state.gd" id="14_opgdf"]
+[ext_resource type="Script" uid="uid://bnhjh3ib2fuq5" path="res://addons/godot_state_charts/transition.gd" id="15_3r5ei"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q11bc"]
 friction = 0.0
@@ -171,6 +171,21 @@ draw_center = false
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jrolu"]
 draw_center = false
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8heu"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rvswv"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_boyg6"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e36ub"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hb5m1"]
+draw_center = false
+
 [sub_resource type="Animation" id="Animation_e2wpk"]
 length = 0.001
 tracks/0/type = "value"
@@ -204,8 +219,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cdwm1"]
 _data = {
-"RESET": SubResource("Animation_e2wpk"),
-"idle_title": SubResource("Animation_fpw2i")
+&"RESET": SubResource("Animation_e2wpk"),
+&"idle_title": SubResource("Animation_fpw2i")
 }
 
 [node name="Game" type="Node2D"]
@@ -248,9 +263,11 @@ process_mode = 3
 script = ExtResource("10_e2g1l")
 
 [node name="MarginContainer" type="MarginContainer" parent="StartScreen"]
-anchors_preset = 15
+anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -9.0
+offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 20
@@ -311,8 +328,8 @@ focus_next = NodePath("../RestartButton")
 focus_previous = NodePath("../QuitButton")
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.939995, 0.918424, 0.933122, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(0.785766, 0.625375, 0.752878, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 32
 theme_override_styles/focus = SubResource("StyleBoxFlat_oa48t")
 theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_054h5")
@@ -326,12 +343,12 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-focus_next = NodePath("../QuitButton")
+focus_next = NodePath("../FullscreenButton")
 focus_previous = NodePath("../PlayButton")
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.939995, 0.918424, 0.933122, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(0.785766, 0.625375, 0.752878, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 32
 theme_override_styles/focus = SubResource("StyleBoxFlat_oa48t")
 theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_054h5")
@@ -340,17 +357,41 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_v6ffp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_jrolu")
 text = "Restart"
 
+[node name="FullscreenButton" type="Button" parent="StartScreen/MarginContainer/VBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_next = NodePath("../QuitButton")
+focus_previous = NodePath("../RestartButton")
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.784314, 0.623529, 0.752941, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.788235, 0.956863, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxFlat_e8heu")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_rvswv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_boyg6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_e36ub")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hb5m1")
+toggle_mode = true
+button_pressed = true
+action_mode = 0
+text = "Fullscreen [ON]"
+flat = true
+
 [node name="QuitButton" type="Button" parent="StartScreen/MarginContainer/VBoxContainer/VBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 focus_next = NodePath("../PlayButton")
-focus_previous = NodePath("../RestartButton")
+focus_previous = NodePath("../FullscreenButton")
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.939995, 0.918424, 0.933122, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(0.785766, 0.625375, 0.752878, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 32
 theme_override_styles/focus = SubResource("StyleBoxFlat_oa48t")
 theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_054h5")
@@ -373,7 +414,7 @@ autowrap_mode = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="StartScreen"]
 libraries = {
-"": SubResource("AnimationLibrary_cdwm1")
+&"": SubResource("AnimationLibrary_cdwm1")
 }
 
 [node name="Particles" type="CanvasLayer" parent="."]
@@ -410,6 +451,7 @@ delay_in_seconds = "0.0"
 
 [connection signal="pressed" from="StartScreen/MarginContainer/VBoxContainer/VBoxContainer2/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="StartScreen/MarginContainer/VBoxContainer/VBoxContainer2/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="toggled" from="StartScreen/MarginContainer/VBoxContainer/VBoxContainer2/FullscreenButton" to="." method="_on_fullscreen_button_toggled"]
 [connection signal="pressed" from="StartScreen/MarginContainer/VBoxContainer/VBoxContainer2/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="state_entered" from="StateChart/Root" to="." method="_on_root_state_entered"]
 [connection signal="state_unhandled_input" from="StateChart/Root" to="." method="_on_root_state_unhandled_input"]

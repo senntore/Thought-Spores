@@ -1,11 +1,11 @@
 [gd_scene load_steps=26 format=3 uid="uid://jq8tefaf0cdm"]
 
-[ext_resource type="Script" path="res://Player/player.gd" id="1_idjua"]
-[ext_resource type="Script" path="res://Player/player_sprite.gd" id="2_0solj"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="3_3knxm"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/compound_state.gd" id="4_d37fx"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/atomic_state.gd" id="5_6labq"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/transition.gd" id="6_jci78"]
+[ext_resource type="Script" uid="uid://cdwukvqwobr24" path="res://Player/player.gd" id="1_idjua"]
+[ext_resource type="Script" uid="uid://bfm6wk3y25iq1" path="res://Player/player_sprite.gd" id="2_0solj"]
+[ext_resource type="Script" uid="uid://jhmvtmlhd2kg" path="res://addons/godot_state_charts/state_chart.gd" id="3_3knxm"]
+[ext_resource type="Script" uid="uid://cbvyi42e2khfa" path="res://addons/godot_state_charts/compound_state.gd" id="4_d37fx"]
+[ext_resource type="Script" uid="uid://gvfv86cu4euo" path="res://addons/godot_state_charts/atomic_state.gd" id="5_6labq"]
+[ext_resource type="Script" uid="uid://bnhjh3ib2fuq5" path="res://addons/godot_state_charts/transition.gd" id="6_jci78"]
 [ext_resource type="AudioStream" uid="uid://bj8t32rx4xngx" path="res://Audio/powerUp.wav" id="7_ysy2m"]
 [ext_resource type="AudioStream" uid="uid://cikhp05he3nxm" path="res://Audio/PowerUp3.wav" id="9_1oj1h"]
 [ext_resource type="AudioStream" uid="uid://drrjwgg1xgqli" path="res://Audio/jump.wav" id="10_jkefy"]
@@ -369,12 +369,12 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_83401"]
 _data = {
-"Burst": SubResource("Animation_ncb7g"),
-"Idle": SubResource("Animation_76fhw"),
-"RESET": SubResource("Animation_g2l4t"),
-"blue_jitter_in": SubResource("Animation_bvb3r"),
-"red_jitter_out": SubResource("Animation_5vtf8"),
-"white_jitter_out": SubResource("Animation_bssqa")
+&"Burst": SubResource("Animation_ncb7g"),
+&"Idle": SubResource("Animation_76fhw"),
+&"RESET": SubResource("Animation_g2l4t"),
+&"blue_jitter_in": SubResource("Animation_bvb3r"),
+&"red_jitter_out": SubResource("Animation_5vtf8"),
+&"white_jitter_out": SubResource("Animation_bssqa")
 }
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_q4ye3"]
@@ -421,7 +421,7 @@ shape = SubResource("CircleShape2D_s7404")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_83401")
+&"": SubResource("AnimationLibrary_83401")
 }
 
 [node name="StateChart" type="Node" parent="."]

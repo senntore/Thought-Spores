@@ -4,7 +4,8 @@ var current_state: String = "start"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	if not DisplayServer.window_get_mode() == 3:
+		%FullscreenButton.toggled
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -12,7 +13,6 @@ func _process(_delta: float) -> void:
 	var viewport_size := get_viewport().get_visible_rect().size
 	if viewport_size.y >= viewport_size.x * 1.6:
 		%Camera2D.zoom = Vector2(2, 2)
-
 
 #func _unhandled_input(event: InputEvent) -> void:
 	#if Input.is_action_just_pressed("ui_menu"):
@@ -31,6 +31,13 @@ func _on_play_button_pressed() -> void:
 
 func _on_restart_button_pressed() -> void:
 	get_tree().reload_current_scene()
+
+func _on_fullscreen_button_toggled(toggled_on: bool) -> void:
+	if not DisplayServer.window_get_mode() == 3:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	elif DisplayServer.window_get_mode() == 3:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+
 
 
 func _on_quit_button_pressed() -> void:

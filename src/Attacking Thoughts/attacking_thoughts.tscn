@@ -1,11 +1,11 @@
 [gd_scene load_steps=13 format=3 uid="uid://b2fxby2nn2ump"]
 
-[ext_resource type="Script" path="res://Attacking Thoughts/attacking_thoughts.gd" id="1_i4k0m"]
-[ext_resource type="Script" path="res://Attacking Thoughts/attaking_sprite.gd" id="2_wnw1e"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="3_ykou4"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/compound_state.gd" id="4_yg88c"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/atomic_state.gd" id="5_ootuu"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/transition.gd" id="6_qvl7s"]
+[ext_resource type="Script" uid="uid://bhuasylrsyowk" path="res://Attacking Thoughts/attacking_thoughts.gd" id="1_i4k0m"]
+[ext_resource type="Script" uid="uid://bovuj42ogtyq1" path="res://Attacking Thoughts/attaking_sprite.gd" id="2_wnw1e"]
+[ext_resource type="Script" uid="uid://jhmvtmlhd2kg" path="res://addons/godot_state_charts/state_chart.gd" id="3_ykou4"]
+[ext_resource type="Script" uid="uid://cbvyi42e2khfa" path="res://addons/godot_state_charts/compound_state.gd" id="4_yg88c"]
+[ext_resource type="Script" uid="uid://gvfv86cu4euo" path="res://addons/godot_state_charts/atomic_state.gd" id="5_ootuu"]
+[ext_resource type="Script" uid="uid://bnhjh3ib2fuq5" path="res://addons/godot_state_charts/transition.gd" id="6_qvl7s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hwyri"]
 radius = 20.0
@@ -147,9 +147,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_17n6p"]
 _data = {
-"RESET": SubResource("Animation_thpev"),
-"attack": SubResource("Animation_l38f0"),
-"idle": SubResource("Animation_4vchv")
+&"RESET": SubResource("Animation_thpev"),
+&"attack": SubResource("Animation_l38f0"),
+&"idle": SubResource("Animation_4vchv")
 }
 
 [node name="AttackingThoughts" type="CharacterBody2D"]

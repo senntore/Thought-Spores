@@ -1,11 +1,11 @@
 [gd_scene load_steps=16 format=3 uid="uid://c7kquvcy63jd2"]
 
-[ext_resource type="Script" path="res://Fellow Thoughts/fellow_thoughts.gd" id="1_cglcv"]
-[ext_resource type="Script" path="res://Fellow Thoughts/fellow_sprite.gd" id="1_mkr0f"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="3_6ru7s"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/compound_state.gd" id="4_ur2w4"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/atomic_state.gd" id="5_vcb78"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/transition.gd" id="6_aqdmk"]
+[ext_resource type="Script" uid="uid://boqeljyxypspc" path="res://Fellow Thoughts/fellow_thoughts.gd" id="1_cglcv"]
+[ext_resource type="Script" uid="uid://dmrmirsinkatv" path="res://Fellow Thoughts/fellow_sprite.gd" id="1_mkr0f"]
+[ext_resource type="Script" uid="uid://jhmvtmlhd2kg" path="res://addons/godot_state_charts/state_chart.gd" id="3_6ru7s"]
+[ext_resource type="Script" uid="uid://cbvyi42e2khfa" path="res://addons/godot_state_charts/compound_state.gd" id="4_ur2w4"]
+[ext_resource type="Script" uid="uid://gvfv86cu4euo" path="res://addons/godot_state_charts/atomic_state.gd" id="5_vcb78"]
+[ext_resource type="Script" uid="uid://bnhjh3ib2fuq5" path="res://addons/godot_state_charts/transition.gd" id="6_aqdmk"]
 [ext_resource type="PackedScene" uid="uid://carvqyvrh8whm" path="res://Audio/merge_audio.tscn" id="7_mjvlp"]
 [ext_resource type="PackedScene" uid="uid://btty315yk83ej" path="res://Audio/split_audio.tscn" id="8_ig0r5"]
 
@@ -92,9 +92,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_17n6p"]
 _data = {
-"RESET": SubResource("Animation_thpev"),
-"burst": SubResource("Animation_pknqv"),
-"idle": SubResource("Animation_4vchv")
+&"RESET": SubResource("Animation_thpev"),
+&"burst": SubResource("Animation_pknqv"),
+&"idle": SubResource("Animation_4vchv")
 }
 
 [node name="FellowThoughts" type="CharacterBody2D"]
